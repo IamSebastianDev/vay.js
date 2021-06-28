@@ -4,8 +4,17 @@
   "description": "vay.js is a simple i18n provided and wrapper",
   "main": "main.mjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node main.mjs",
+    "dev": "nodemon main.mjs",
+    "build": "uglifyjs ./src/vay.js -c toplevel -m -o ./dist/vay.min.js"
   },
   "author": "Sebastian Heinz",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "uglify-js": "^3.13.10"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
