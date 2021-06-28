@@ -1,0 +1,11 @@
+{
+  "name": "vay",
+  "version": "1.0.0",
+  "description": "vay.js is a simple i18n provided and wrapper",
+  "main": "main.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sebastian Heinz",
+  "license": "MIT"
+}
