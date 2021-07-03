@@ -7,7 +7,15 @@
 */
 
 import de from './service/dictionary.de.mjs';
+import en from './service/dictionary.de.mjs';
 
 import { Vay } from '../vay.js';
 
-console.log(Vay);
+const i18n = new Vay({
+	dictionaries: { de, en },
+	config: { defaultLanguage: 'de' },
+});
+
+console.log(i18n);
+
+i18n.currentLanguage = 'de';
