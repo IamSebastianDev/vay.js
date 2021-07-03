@@ -51,6 +51,7 @@ class Vay {
 			detectLanguage: true,
 			defaultLanguage: undefined,
 			ignoreAttributes: false,
+			keepAttributes: false,
 		};
 
 		/*
@@ -288,11 +289,13 @@ class Vay {
 
 		/*
 
-			get all elements that contain an attribute equal to the provided token. Those elements will have their textcontent replaced with the values provided by the dictionary that are equal to the value of the attribute.
+			get all elements that are childs of the target element that contain an attribute equal to the provided token. Those elements will have their textcontent replaced with the values provided by the dictionary that are equal to the value of the attribute.
 
 		*/
 
-		let elements = document.querySelectorAll(`[${token}]`);
+		let elements = this._config.targetElement.querySelectorAll(
+			`[${token}]`
+		);
 
 		/*
 
@@ -326,7 +329,7 @@ class Vay {
 
 				*/
 
-				if (translated) {
+				if (translated != 'undefined') {
 					elem.textContent = translated;
 
 					/*
@@ -375,14 +378,38 @@ class Vay {
 
 					/*
 
-							set the new attribute on the elemeent
+						If the attribute does not have a target attribute, return early after removing the attribute if desired
 
-						*/
+					*/
+
+					if (attribute == undefined) {
+						if (!this._config.keepAttributes) {
+							elem.removeAttribute(att);
+						}
+
+						return;
+					}
+
+					/*
+
+						set the new attribute on the elemet
+
+					*/
 
 					elem.setAttribute(
 						attribute,
 						this.translate(elem.getAttribute(att))
 					);
+
+					/*
+
+						if keepAttributes is set to false, remove the attributee
+
+					*/
+
+					if (!this._config.keepAttributes) {
+						elem.removeAttribute(att);
+					}
 				}
 			});
 		});
