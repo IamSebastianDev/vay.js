@@ -51,7 +51,7 @@ class Vay {
 			detectLanguage: true,
 			defaultLanguage: undefined,
 			ignoreAttributes: false,
-			keepAttributes: false,
+			removeAttributesOnRender: false,
 		};
 
 		/*
@@ -383,7 +383,7 @@ class Vay {
 					*/
 
 					if (attribute == undefined) {
-						if (!this._config.keepAttributes) {
+						if (this._config.removeAttributesOnRender) {
 							elem.removeAttribute(att);
 						}
 
@@ -403,11 +403,11 @@ class Vay {
 
 					/*
 
-						if keepAttributes is set to false, remove the attributee
+						if removeAttributesOnRender is set to true, remove the attributee
 
 					*/
 
-					if (!this._config.keepAttributes) {
+					if (this._config.removeAttributesOnRender) {
 						elem.removeAttribute(att);
 					}
 				}
