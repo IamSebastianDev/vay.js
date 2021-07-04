@@ -376,7 +376,7 @@ class Vay {
 
 					let attribute = att.split('-')[1];
 
-					/*
+					/*import en from "./path/to/your/dictionary.mjs"
 
 						If the attribute does not have a target attribute, return early after removing the attribute if desired
 
