@@ -46,11 +46,44 @@ class Vay {
 
 	constructor({ dictionaries, config } = {}) {
 		this._defaultConfig = {
+			/**
+
+				@description targetAttribute can be changed to have Vay look for another tag when the render method is executeed
+
+			*/
+
 			targetAttribute: 'vay',
+
+			/**
+
+				@description targetElement describes the Parent Element which children should be used to check for translation attributes.
+
+			*/
+
 			targetElement: document.documentElement,
-			detectLanguage: true,
+
+			/**
+
+				@description defaultLangauge is used to set a language to use for Vay. If no language is set, vay will try to detect the language it should use. This is the default
+
+			*/
+
 			defaultLanguage: undefined,
+
+			/**
+
+				@description set this to true if you want to only convert and translate text content and want to ignore vay-* attributes for translation
+
+			*/
+
 			ignoreAttributes: false,
+
+			/**
+
+				@description setting removeAttributesOnRender to true will remove the vay attribute and other attributes on render. After this, vay won't be able to rerender the page in a different language unless the complete HTML is rerenderer with new attributes. 
+
+			*/
+
 			removeAttributesOnRender: false,
 		};
 
@@ -330,8 +363,17 @@ class Vay {
 				*/
 
 				if (translated != 'undefined') {
-					elem.textContent = translated;
+					/*
 
+						If the element has a vay-html marker, the translated phrase will be treated as html instead of as textcontent.
+
+					*/
+
+					if (elem.hasAttribute('vay-html')) {
+						elem.innerHTML = translated;
+					} else {
+						elem.textContent = translated;
+					}
 					/*
 
 						if the translation is null or undefined, push the element to the failed elements array
@@ -376,13 +418,13 @@ class Vay {
 
 					let attribute = att.split('-')[1];
 
-					/*import en from "./path/to/your/dictionary.mjs"
+					/*
 
-						If the attribute does not have a target attribute, return early after removing the attribute if desired
+						If the attribute does not have a target attribute or is the reserverd html attributeq, return early after removing the attribute if desired
 
 					*/
 
-					if (attribute == undefined) {
+					if (attribute == undefined || attribute == 'html') {
 						if (this._config.removeAttributesOnRender) {
 							elem.removeAttribute(att);
 						}
