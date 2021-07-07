@@ -6,6 +6,19 @@
 
 Vay is a lightweight (2kb minified), modern & dependency free i18n provider.
 
+## Table of Contents
+- [Vay.js](#vayjs)
+  * [Getting started with Vay](#getting-started-with-vay)
+    + [Creating a new Instance](#creating-a-new-instance)
+    + [Translating static content](#translating-static-content)
+    + [Translating dynamic content](#translating-dynamic-content)
+  * [Taking a closer look](#taking-a-closer-look)
+  * [Config Reference](#config-reference)
+  * [API Reference](#api-reference)
+  * [Compatability](#compatability)
+  * [License](#license)
+
+
 ## Getting started with Vay
 
 ###Preparations
@@ -87,7 +100,7 @@ i18n.render()
 Your element should now read "Hello World!". 
 
 ### Translating dynamic content
-Sometimes you'll want to use Vay with a JavaScript Library or simply with dynamically created Elements. For that case, Vay provides the 'translate' method, that will directly translate a Token and return a Phrase string. Consider a example like this:
+Sometimes you'll want to use Vay with a JavaScript Library or with dynamically created elemeents. For that case, Vay provides the 'translate' method, that will directly translate a **Token** and return a **Phrase** string. Consider a example like this:
 
 ```JS
 /*
@@ -117,6 +130,8 @@ console.log(Element);
 // will result in: <h1>Hello World!</h1>
 
 ```
+
+## Taking a closer look
 
 ## Config Reference
 
