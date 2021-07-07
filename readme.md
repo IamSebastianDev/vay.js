@@ -6,91 +6,123 @@
 
 Vay is a lightweight (2kb minified), modern & dependency free i18n provider.
 
-## Getting started
+## Getting started with Vay
 
-### Installing Vay
+###Preparations
 
-To use Vay, include it in your project as a module.
-
-```HTML
-<script  type="module"  src="./your/path/to/vay.min.js" ></script>
-
-```
- 
+To get started with Vay, start by including it inside your project as a module.
 
 ```HTML
-<script  type="module"  src="https://vay.now.sh/dist/vay.min.js"></script>
-
+<script type="module" src="./your/path/to/vay.js">
 ```
 
-### Creating a new Instance
+From there, you can import Vay into your project, to eventually create a new instance
 
 ```JS
+// import Vay into your project
 
-// import Vay
-import { Vay } from "./path/to/vay.js"
+import { Vay } from "./your/path/to/vay.js"
 
-// import a dictionary
-import en from "./path/to/your/dictionary.mjs"
-import de from "./path/to/your/otherDictionary.mjs"
+```
 
+To actually create a new instance of Vay, you will need a dictionary and, optionally, a config object. 
+
+```JS
 /*
 
-	The Vay constructor takes a Object as argument, that should contain 
-	at least a "dictionaries" property. A "config" object can be provided 
-	optionally. See below for information on dictionaries and config objects.
+	A simple dictionary consists of just a Token and a Phrase. Tokens are 
+	what Vay uses to identify the Phrase it needs to translate.
 
 */
 
-const i18n = new Vay({ 
-	dictionaries: { en },
-	config
-	})
+const Dictionary = {
+	greeting: "Hello World!",
+}
+
 ```
-## dictionaries &lt;Object&gt;
+>Note: We will look at more complex dictionaries later on, but an easy one will do for now.
 
-> Note: A dictionary key should conform to the [ISO 639-1 two letter language Codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes "ISO 639-1 two letter language Codes").
+### Creating a new Instance
+To use Vay in your Project, you need to creaete a new Instance of it. This will let you access Vay's API.
 
-The dictionaries property of the object supplied to the constructor is used to provide the data for Vay. How to create a dictionary is described further down, see "Dictionaries".
+```JS
+/*
 
-```js
-// creating the individual dictionaries
+	To create new a Instance, call it's constructor and supply it with a Object that 
+	contains at least a 'dictionaries' property. The config Object is optional and the 
+	defaults should work for most projects.
 
-const en = { token: "Hello World!" }
-const de = { token: "Hallo Welt!" }
+*/
 
-// creating the dictionary object to pass to the constructor
+const i18n = new Vay({
+	dictionaries: {
+		en: Dictionary
+	}
+})
+```
+>Note: The dictionary keys should follow [the ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) convention of two letter language codes.
 
-const dictionaries = { en, de }
+### Translating static content
+
+With your freshly created instance of Vay, you can finally start translating content. Let's consider the **Token** we already have in our dictionary, 'greeting'. We can simply add a HTML Tag and tell Vay to translate it.
+
+```HTML
+<h1 vay="greeting"></h1>
 ```
 
-The created dictionaries object can than be passed to the constructor as seen above and will be used to translate as requested.
+You will use the "vay" attribute not only to denote elements that should be translated, but also to supply the **Token** for the translation. In this case, the **Token** is 'greeting'.  But there is one more addiontal step to see "Hello World!" on the website. 
 
-## config &lt;Object&gt;
+```JS
+/*
 
-The config object is used to control certain aspect of the translation and mechanics of Vay.
+	To transform all elements that have a vay attribute, we need to call the
+	'Render' method of Vay. This will check all Elements for the Attribute and
+	replace their textcontent with the Phrase corresponding to the supplied Token.  
 
-### targetAttribute &lt;String&gt;
+*/
 
-The targetAttribute property is used to tell Vay which attribute to look for when rendering the page with the translated strings. The default is "vay".
+i18n.render()
 
-### targetElement &lt;HTMLElement&gt;
+```
+Your element should now read "Hello World!". 
 
-The targetElement sets the element Vay uses as parent Element to start looking for elements to translate on render. The default is document.documentBody. You can use this to only translate specific parts of the Website.
+### Translating dynamic content
+Sometimes you'll want to use Vay with a JavaScript Library or simply with dynamically created Elements. For that case, Vay provides the 'translate' method, that will directly translate a Token and return a Phrase string. Consider a example like this:
 
-### defaultLanguage &lt;String&gt;
+```JS
+/*
 
-You can use the defaultLanguage property to set a default language Vay should use. This should correspond to a two letter code used as dictionary key. The default is undefined, instead Vay will try to detect the default language automatically.
+	We first translate the phrase
 
-### ignoreAttributes &lt;Boolean&gt;
+*/
 
-Setting ignoreAttributes to true will cause Vay to ignore Attributes while translating on render. This means only elements inside will be translated. The default is false.
+const translated = i18n.translate('greeting'); 
 
-### removeAttributesOnRender &lt;Boolean&gt;
+/*
 
-Setting this option to true will cause Vay to remove the attributes used to translate the page on Render. This makes it impossible for Vay to rerender and retranslate the page after translating it. You can use this to serve a website only in a specific language.
+	Now let's add the translated string to an element
 
+*/
 
+const Element = document.createElement("h1");
+Element.textContent = translated;
+
+/*
+
+	Logging the Element will show us that our translation worked
+
+*/
+
+console.log(Element); 
+// will result in: <h1>Hello World!</h1>
+
+```
+
+## Config Reference
+
+You can supply a config object to Vay to control certain aspects and behaviours.
+
+## API Reference
 
 ## Compatability
 
