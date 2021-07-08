@@ -29,9 +29,9 @@ Vay is a lightweight (2kb minified), modern & dependency free i18n provider.
     + [ignoreAttributes &lt;Boolean&gt;](#ignoreattributes--lt-boolean-gt-)
     + [removeAttributesOnRender &lt;Boolean&gt;](#removeattributesonrender--lt-boolean-gt-)
   * [API Reference](#api-reference)
-    + [render () : HTMLElement[]](#render------htmlelement--)
-    + [translate ( token : String, data : Object, lang : String ) : String](#translate---token---string--data---object--lang---string-----string)
-    + [currentLanguage : string](#currentlanguage---string)
+    + [The render method](#the-render-method)
+    + [The translate method](#the-translate-method)
+    + [The currentLanguage property](#the-currentlanguage-property)
   * [Compatability](#compatability)
   * [License](#license)
 
@@ -205,8 +205,8 @@ Under certain circumstances it can be necessary to provide dynamic values for tr
 ```js
 /*
 
-	Adding a dynamic value to a Phrase is done by using a double set of curly brackets as
-	seen in the example below.
+	Adding a dynamic value to a Phrase is done by using a double set of 
+	curly brackets as seen in the example below.
 
 */
 
@@ -217,8 +217,8 @@ const dictionary = {
 
 /*
 
-	If a token is then translated and a name properety is passed, the value will be exchanged
-	dynamically.
+	If a token is then translated and a name properety is passed, 
+	the value will be exchanged dynamically.
 
 */
 
@@ -265,9 +265,10 @@ Let's create the dictionary entry first:
 ```js
 /*
 
-	To be able to access different count values, you simply define the count as a
-	key for a string like in the example below. When accessing the Token, Vay will check for
-	a "count" propery, and if noone is found, default the count to 1.
+	To be able to access different count values, you simply define the 
+	count as a key for a string like in the example below. 
+	When accessing the Token, Vay will check for a "count" propery, 
+	and if noone is found, default the count to 1.
 
 */
 
@@ -285,9 +286,10 @@ const dictionary = {
 
 /*
 
-	To access different forms, pass a 'count' property in the data object like you can see 
-	below. In case a number cannot be directly associated with a key, Vay will look for the 
-	next lower number. 
+	To access different forms, pass a 'count' property in the 
+	data object like you can see below. 
+	In case a number cannot be directly associated with a key, 
+	Vay will look for the next lower number. 
 
 */
 
@@ -392,7 +394,9 @@ const config = { removeAttributesOnRender: false }
 
 Vay exposes certain methods and values to the user. All public methods and properties are listed below.
 
-### render () : HTMLElement[]
+### The render method
+
+```render () : HTMLElement[]```
 
 The render method is used to render and replace the **Tokens** with the **Phrases** according to the dictionary corresponding to the currently set language. The method needs to be called manually to take effect. 
 
@@ -402,7 +406,9 @@ window.addEventlistener(DOMContentLoaded, (ev) => { i18n.render() })
 
 > Note: The method returns an array of HTMLElements that could not be translated, either because of a mismatch of tokens or another reason.
 
-### translate ( token : String, data : Object, lang : String ) : String
+### The translate method
+
+```translate ( token : String, data : Object, lang : String ) : String```
 
 | Name | Type | Description |
 |------|------|-------------|
@@ -440,7 +446,9 @@ translated = i18n.translate('greetMe', { name: 'World' });
 // results in: "Hello, World!"
 
 ``` 
-### currentLanguage : string
+### The currentLanguage property
+
+```currentLanguage : string```
 
 The currentLanguage property is used to retrieve and set the current Language.
 
