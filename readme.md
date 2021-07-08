@@ -9,7 +9,6 @@ Vay is a lightweight (2kb minified), modern & dependency free i18n provider.
 ## Table of Contents
 
 - [Vay.js](#vayjs)
-  * [Table of Contents](#table-of-contents)
   * [Getting started with Vay](#getting-started-with-vay)
     + [Preparations](#preparations)
     + [Creating a new Instance](#creating-a-new-instance)
@@ -17,11 +16,11 @@ Vay is a lightweight (2kb minified), modern & dependency free i18n provider.
     + [Translating dynamic content](#translating-dynamic-content)
   * [Taking a closer look](#taking-a-closer-look)
     + [Fallbacks](#fallbacks)
-    + [Translating attributes.](#translating-attributes)
-    + [innerHTML instead of textContent.](#innerhtml-instead-of-textcontent)
-    + [Providing Data dynamically.](#providing-data-dynamically)
-    + [Dictionaries and dot notation.](#dictionaries-and-dot-notation)
-    + [Singular, Plural, and more.](#singular--plural--and-more)
+    + [Translating attributes](#translating-attributes)
+    + [innerHTML instead of textContent](#innerhtml-instead-of-textcontent)
+    + [Providing dynamic data](#providing-data-dynamically)
+    + [Dictionaries and dot notation](#dictionaries-and-dot-notation)
+    + [Singular, Plural, and more](#singular--plural--and-more)
   * [Config Reference](#config-reference)
     + [targetAttribute &lt;String&gt;](#targetattribute--lt-string-gt-)
     + [targetElement &lt;HTMLElement&gt;](#targetelement--lt-htmlelement-gt-)
@@ -162,7 +161,7 @@ Vay will only replace the textContent of elements when a valid **Phrase** can be
 
 ```
  
-### Translating attributes.
+### Translating attributes
 
 Sometimes you will need to translate text that is not inside an Element but instead part of the Elements mark up. For example accessibilty descriptions or alternative texts. Vay let's you do this very easily.
 
@@ -176,7 +175,7 @@ Sometimes you will need to translate text that is not inside an Element but inst
 ```
 As you can see in the snippet above, all you need to do is add the 'vay' attribute to mark the element for translation and the 'vay-alt' attribute with a **Token** as value to create a 'alt' attribute with the corresponding **Phrase**. You can tell Vay to ignore attributes by setting the 'ignoreAttributes' property of the config object to **true**.
 
-### innerHTML instead of textContent.
+### innerHTML instead of textContent
 
 There are cases where you'll want to translate or insert HTML blocks instead of regular text. You can do this by adding your markup to the dictionary as usual, and adding a 'vay-html' attribute to the Element you want to translate.
 
@@ -198,7 +197,7 @@ const dictionary = {
 
 > Tip: In the case you're using the 'translate' method, you can just add the returned **Phrase** using innerHTML instead of textContent, basically bypassing this problem entirely.
 
-### Providing Data dynamically.
+### Providing dynamic data
 
 Under certain circumstances it can be necessary to provide dynamic values for translation **Phrases**. This is possible in vay by using the 'data' parameter of the 'translate' method. 
 
@@ -229,7 +228,7 @@ const translated = i18n.translate('greeting', { name: "World" });
 
 > Note: To read more about the translate method and it's parameters, take a look at the api reference.
 
-### Dictionaries and dot notation.
+### Dictionaries and dot notation
 
 Creating a dictionary is fairly simple. A basic dictionary is a Object with the **Tokens** as key and **Phrases** as values. 
 
@@ -256,7 +255,7 @@ The corresponding mark up would look like this:
 <h1 vay="category.token">Phrase</h1>
 ```
 
-### Singular, Plural, and more.
+### Singular, Plural, and more
 
 Sometimes it's necessrary to provide **Phrases** based on certain numbers, for example to differentiate between Singular & Plural forms. This is done by providing the **translate** method of Vay with a 'count' property.
 
@@ -274,9 +273,9 @@ Let's create the dictionary entry first:
 
 const dictionary = {
 	greetings: {
-	1: "Hello You!",
-	2: "Hello, more then one and less then 5!",
-	5: "Hello, there's a lot of you!"
+		1: "Hello You!",
+		2: "Hello, more then one and less then 5!",
+		5: "Hello, there's a lot of you!"
 	}
 }
 
