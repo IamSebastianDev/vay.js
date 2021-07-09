@@ -527,7 +527,7 @@ class Vay {
 
 			window.dispatchEvent(
 				new CustomEvent('setLanguage', {
-					details: { newLanguage: this._currentLanguage },
+					detail: { newLanguage: this._currentLanguage },
 				})
 			);
 
