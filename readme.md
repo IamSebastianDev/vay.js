@@ -465,7 +465,7 @@ i18n.currentLanguage = 'en';
 ```
 > Note: setting the currentLanguage property will **NOT** cause a rerender. This has to be done manually.
 
-After the language is set using the setter, a custom event will be dispatched which can be used to request a rerender. The event's name is called 'setLanguage' and contains the current language code as payload under the *'event.details.newLanguage'* property.
+After the language is set using the setter, a custom event will be dispatched which can be used to request a rerender. The event's name is called 'setLanguage' and contains the current language code as payload under the *'event.detail.newLanguage'* property.
 
 ```js
 /*
@@ -475,10 +475,10 @@ After the language is set using the setter, a custom event will be dispatched wh
 
 */
 
-window.addEventlistener('languageSet', (ev) => {
+window.addEventlistener('setLanguage', (ev) => {
 	i18n.render()
 	
-	console.log(ev.details.newLanguage);
+	console.log(ev.detail.newLanguage);
 	// will log the languagee that has been set.
 })
 
