@@ -38,10 +38,10 @@ Vay is a lightweight (2kb minified), modern & dependency free i18n provider.
 
 ### Preparations
 
-To get started with Vay include it inside your project as a module.
+To get started with Vay, make sure your main JavaScript file is included as a module, to be able to use ES6 style imports.
 
 ```html
-<script type="module" src="./your/path/to/vay.js">
+<script type="module" src="./app.js">
 ```
 
 From there, you can import Vay into your project, to eventually create a new instance.
