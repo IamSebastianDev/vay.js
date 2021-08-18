@@ -7,9 +7,92 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Vay.js | minimal & dependency free i18n provider.</title>
+		<link rel="stylesheet" href="./style/style.css" />
+		<script src="https://pangolicons.herokuapp.com/pangolicons.latest.min.mjs"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Nunito:wght@300;400&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
-		<div vay="ui.testHTML" vay-html>Fallback</div>
+		<!-- For the curious developer: This website was created lovingly by hand without the use of a framework or library :) -->
+		<nav>
+			<ul id="navigation-list">
+				<li>
+					<a class="navigation-link" href="#introduction"
+						>Introduction</a
+					>
+				</li>
+				<li>
+					<a class="navigation-link" href="#documentation"
+						>Documentation</a
+					>
+				</li>
+				<li>
+					<a class="navigation-link" href="#guides">Guides</a>
+				</li>
+				<li>
+					<a
+						class="navigation-link"
+						href="vay.min.js"
+						download="vay.min.js"
+						>Download
+						<span class="nav-version">latest: v1.0, 2kb</span></a
+					>
+				</li>
+				<li>
+					<a
+						class="navigation-link navigation-icon"
+						rel="norefferer noopener"
+						href="https://github.com/iamsebastiandev/vay.js"
+					>
+						<i pangolicons="github"></i>
+					</a>
+				</li>
+			</ul>
+			<button id="navigation-mobile" state="false">
+				<i pangolicons="alignJustifiy"></i>
+			</button>
+		</nav>
+		<main>
+			<section id="introduction">
+				<div class="container">
+					<h1>Hej, welcome to Vay.js</h1>
+					<p>
+						Vay is a lightweight, modern and dependecy free i18n
+						language provider that can be easily included in a new
+						or already existing project.
+					</p>
+					<p>
+						Vay features a simple API for static or dynamic
+						websites, ways to pluralize or contextualize
+					</p>
+				</div>
+			</section>
+			<section id="documentation"></section>
+			<section id="guides"></section>
+		</main>
+		<footer>
+			<p>
+				Vay.js is Open Source and available under a
+				<a
+					href="https://opensource.org/licenses/MIT"
+					rel="noopener norefferer"
+					>MIT License</a
+				>.
+			</p>
+			<p>
+				&copy; 2021
+				<a
+					href="https://github.com/iamsebastiandev"
+					target="_blank"
+					rel="norefferer noopener"
+					>Sebastian Heinz</a
+				>
+			</p>
+		</footer>
 		<script type="module" src="application/app.mjs"></script>
 	</body>
 </html>

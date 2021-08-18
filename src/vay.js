@@ -85,6 +85,14 @@ class Vay {
 			*/
 
 			removeAttributesOnRender: false,
+
+			/**
+
+				@description the name for the event emitted by the currentLanguage setter
+
+			*/
+
+			languageHasChangedEventName: 'languageHasChanged',
 		};
 
 		/*
@@ -526,7 +534,7 @@ class Vay {
 			*/
 
 			window.dispatchEvent(
-				new CustomEvent('setLanguage', {
+				new CustomEvent(this._config.languageHasChangedEventName, {
 					detail: { newLanguage: this._currentLanguage },
 				})
 			);

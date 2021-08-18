@@ -14,8 +14,8 @@ const App = Express();
 
 // set up the static resources the App instance should use
 
-App.use(Express.static('./src'));
 App.use(Express.static('./public'));
+App.use(Express.static('./dist'));
 
 // define a Port for the App to use
 

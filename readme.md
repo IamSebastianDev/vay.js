@@ -1,5 +1,3 @@
-
-  
 # Vay.js
 
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)  [![Version](https://img.shields.io/badge/version-1.0.0-informational?style=flat-square)]()
@@ -27,6 +25,7 @@ Vay is a lightweight (2kb minified), modern & dependency free i18n provider.
     + [defaultLanguage &lt;String&gt;](#defaultlanguage--lt-string-gt-)
     + [ignoreAttributes &lt;Boolean&gt;](#ignoreattributes--lt-boolean-gt-)
     + [removeAttributesOnRender &lt;Boolean&gt;](#removeattributesonrender--lt-boolean-gt-)
+    + [languageHasChangedEventName &lt;String&gt;](#languagehaschangedeventname--lt-string-gt-)
   * [API Reference](#api-reference)
     + [The render method](#the-render-method)
     + [The translate method](#the-translate-method)
@@ -389,6 +388,13 @@ The removeAttributesOnRender property can be set to true to remove the Attribute
 const config = { removeAttributesOnRender: false }
 ```
 
+### languageHasChangedEventName &lt;String&gt;
+The languageHasChangedEventName property describes the name of the event that is emitted when the currentLanguage setter is used to change the language. The default is **languageHasChanged**
+
+```js
+const config = { changeEventName: 'languageHasChanged' }
+```
+
 ## API Reference
 
 Vay exposes certain methods and values to the user. All public methods and properties are listed below.
@@ -444,7 +450,8 @@ translated = i18n.translate('greetings', { count: 2 })
 translated = i18n.translate('greetMe', { name: 'World' });
 // results in: "Hello, World!"
 
-``` 
+```
+
 ### The currentLanguage property
 
 ```currentLanguage : string```
@@ -457,7 +464,7 @@ The currentLanguage property is used to retrieve and set the current Language.
 const current = i18n.currentLanguage; 
 // results in a two letter string that represents the current language 
 
-// setting the langaugee
+// setting the language
 
 i18n.currentLanguage = 'en'; 
 // sets the current language to 'en'; 
@@ -465,7 +472,7 @@ i18n.currentLanguage = 'en';
 ```
 > Note: setting the currentLanguage property will **NOT** cause a rerender. This has to be done manually.
 
-After the language is set using the setter, a custom event will be dispatched which can be used to request a rerender. The event's name is called 'setLanguage' and contains the current language code as payload under the *'event.detail.newLanguage'* property.
+After the language is set using the setter, a custom event will be dispatched which can be used to request a rerender. The event's name can be changed in the config property. The event contains the current language code as payload under the *'event.detail.newLanguage'* property.
 
 ```js
 /*
@@ -475,7 +482,7 @@ After the language is set using the setter, a custom event will be dispatched wh
 
 */
 
-window.addEventlistener('setLanguage', (ev) => {
+window.addEventlistener('languageHasChanged', (ev) => {
 	i18n.render()
 	
 	console.log(ev.detail.newLanguage);
