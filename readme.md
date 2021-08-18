@@ -392,7 +392,7 @@ const config = { removeAttributesOnRender: false }
 The languageHasChangedEventName property describes the name of the event that is emitted when the currentLanguage setter is used to change the language. The default is **languageHasChanged**
 
 ```js
-const config = { changeEventName: 'languageHasChanged' }
+const config = { languageHasChangedEventName: 'languageHasChanged' }
 ```
 
 ## API Reference
