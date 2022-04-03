@@ -38,8 +38,10 @@ class Vay {
 	/**
 
         @constructor
-        @param { Object } dicts - An Object containing the dictionary objects vay should use to translate strings.
-        @param { Object } config - the Object used to configure Vay @todo destructure the config object
+
+		@param { {} } param1 - An Object passed to the constructor containing the dictionaries and config properties
+        @param { {} } param1.dictionaries - An Object containing the dictionary objects vay should use to translate strings.
+        @param { {} } param1.config - the Object used to configure Vay 
 
 
     */
