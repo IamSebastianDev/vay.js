@@ -1,9 +1,8 @@
 node_modules
 .env
-scratchpad.js
+dist
 
 *.zip
-
 
 # General
 .DS_Store
@@ -42,3 +41,21 @@ Temporary Items
 
 # Local History for Visual Studio Code
 .history/
+
+# Uploads folder
+*/uploads/**/*.*
+!*/uploads/**/.gitkeep
+
+# Custom folders
+archive
+.idea
+
+# Yarn
+.yarn/*
+yarn-error.log
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
