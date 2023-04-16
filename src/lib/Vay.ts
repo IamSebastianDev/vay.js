@@ -141,4 +141,49 @@ export class Vay<T extends Dictionary<Record<string, Phrase>>> {
         // if no phrase can be matched to the token, return the token
         return token;
     }
+
+    #processToken(element: Element): void {
+        const token = element.getAttribute(this.#targetAttribute) as any;
+        const translated = this.translate(token);
+
+        // if no translation was found, return early to indicate
+        // the translation failed. No further processing should take place
+        if (translated === token) {
+            return;
+        }
+
+        const method = element.hasAttribute(`${this.#targetAttribute}-html`) ? 'innerHTML' : 'textContent';
+        element[method] = translated;
+    }
+
+    #processAttributes(element: Element): void {
+        if (this.#ignoreAttributes) return;
+
+        const attributeSet = [...new Set(element.getAttributeNames())].filter(
+            (attributeName) =>
+                attributeName.startsWith(this.#targetAttribute) && !(attributeName === `${this.#targetAttribute}-html`)
+        );
+
+        attributeSet.forEach((attribute) => {
+            const [, attributeName] = attribute.split(`-`);
+
+            element.setAttribute(attributeName, this.translate(element.getAttribute(attribute) as any));
+        });
+
+        if (this.#removeAttributesOnRender) {
+            attributeSet.forEach((attribute) => {
+                element.removeAttribute(attribute);
+            });
+        }
+    }
+
+    render(): void {
+        // Get all elements with a attribute matching the supplied targetAttribute
+        // Iterate them to set the static translations
+        const markedElements = [...this.#targetElement.querySelectorAll(`[${this.#targetAttribute}]`)];
+        markedElements.map((element) => {
+            this.#processToken(element);
+            this.#processAttributes(element);
+        });
+    }
 }
