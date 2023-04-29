@@ -1426,11 +1426,6 @@ builtins@^5.0.0:
   dependencies:
     semver "^7.0.0"
 
-byndly@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/byndly/-/byndly-1.1.0.tgz#c524513c2e5bd4b54944974e62bfbe7ddf6a3c6f"
-  integrity sha512-Q1+qUwV53LQ4/wS738jMKe7rku5h3wr0c3yYPvbWcx3gSY94YO9elqeKJOn2WiYc7i4krg/FljEhjzvDz5Pukw==
-
 cacache@^16.1.0:
   version "16.1.3"
   resolved "https://registry.yarnpkg.com/cacache/-/cacache-16.1.3.tgz#a02b9f34ecfaf9a78c9f4bc16fceb94d5d67a38e"
