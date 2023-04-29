@@ -16,7 +16,7 @@ import { Dictionary, ISO639Code, Phrase } from '../types';
  * @example
  *
  * ```ts
- * import { Vay, defineDictionary } from "vayjs";
+ * import { Vay, defineDictionary } from "vay.js";
  *
  * // Create a Dictionary that typescript can use
  * // to infer the structure of the phrases
