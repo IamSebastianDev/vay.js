@@ -4,7 +4,6 @@ import { VayConfig } from '../types';
 
 const defaultConfig: VayConfig = {
     targetAttribute: 'vay',
-    targetElement: document.documentElement,
     ignoreAttributes: false,
     removeAttributesOnRender: false,
     quiet: true,

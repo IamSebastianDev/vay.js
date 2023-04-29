@@ -13,14 +13,7 @@ export type VayConfig = {
      * The default tag used is 'vay'.
      */
     targetAttribute: string;
-    /**
-     * @type { Element }
-     * @description
-     * The targetElement is the element that acts as root for the static translation. All children
-     * of the element will be checked for translation tags. By default, `document.documentElement` is
-     * used as root.
-     */
-    targetElement: Element;
+
     /**
      * @type { boolean }
      * @description

@@ -176,10 +176,15 @@ export class Vay<T extends Dictionary<Record<string, Phrase>>> {
         }
     }
 
-    render(): void {
+    render(targetElement: HTMLElement): void {
+        if (!targetElement) {
+            this._report(VayError.MISSING_RENDER_TARGET);
+            return;
+        }
+
         // Get all elements with a attribute matching the supplied targetAttribute
         // Iterate them to set the static translations
-        const markedElements = [...this._targetElement.querySelectorAll(`[${this._targetAttribute}]`)];
+        const markedElements = [...targetElement.querySelectorAll(`[${this._targetAttribute}]`)];
         markedElements.map((element) => {
             this._processToken(element);
             this._processAttributes(element);
