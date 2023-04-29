@@ -54,7 +54,7 @@
     ]
   },
   "name": "vay.js",
-  "version": "3.0.0",
+  "version": "1.0.0",
   "repository": "https://github.com/IamSebastianDev/vay.js.git",
   "author": "Sebastian <sebastian@iamsebastian.dev>",
   "dependencies": {},
