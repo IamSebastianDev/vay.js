@@ -190,4 +190,16 @@ export class Vay<T extends Dictionary<Record<string, Phrase>>> {
             this._processAttributes(element);
         });
     }
+
+    /**
+     * @description
+     * Creates a new translator function bound to the current Vay instance. The returned function
+     * can be used to translate tokens outside of the Vay instance.
+     *
+     * @returns {(token: PropertyPath<T['phrases']>, tData?: TranslationData, language?: ISO639Code) => string} A translator function
+     */
+
+    createTranslator(): (token: PropertyPath<T['phrases']>, tData?: TranslationData, language?: ISO639Code) => string {
+        return this.translate.bind(this);
+    }
 }
