@@ -2,7 +2,7 @@
 
 # Vay.js
 
-You can find the in depth documentation for **Vay** (from v.3.0.0) here.
+You can find the in depth documentation for **Vay** (from v.1.0.0) here.
 
 ## Table of Contents
 
