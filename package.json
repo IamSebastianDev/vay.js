@@ -58,5 +58,5 @@
   "repository": "https://github.com/IamSebastianDev/vay.js.git",
   "author": "Sebastian <sebastian@iamsebastian.dev>",
   "dependencies": {},
-  "unpkg": "./dist/index.browser.min.js"
+  "unpkg": "./dist/vay.browser.min.js"
 }
