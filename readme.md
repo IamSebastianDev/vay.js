@@ -4,7 +4,7 @@
 
 [![Npm package version](https://badgen.net/npm/v/vay.js)](https://www.npmjs.com/package/vay.js)[![Npm package total downloads](https://badgen.net/npm/dt/vay.js)](https://npmjs.com/package/vay.js)[![Npm package license](https://badgen.net/npm/license/vay.js)](https://npmjs.com/package/vay.js)[![Github tag](https://badgen.net/github/tag/iamsebastiandev/vay.js)](https://github.com/iamsebastiandev/vay.js/tags)
 
-A lightweight (3kb minified), modern & dependency free internationalization (i18n) provider that features a simple API that supports nested tokens, pluralization and interpolation. **Vay** is strongly typed.
+A lightweight (3kb minified), modern & dependency free internationalization (i18n) provider that features an developer friendly API that supports nested tokens, pluralization and interpolation. **Vay** is strongly typed.
 
 ## Installing
 
@@ -89,7 +89,7 @@ Use the `render()` method to translate a subset of a provided `HTML Element` and
 The `<div>` with the `token` 'title' will have it's text-content replaced with the respective `phrase` in the dictionary,
 'Hello World'. When ever the used changes the language, you can re-render the translations.
 
-> Note: The dictionary created above is one in it's simplest form. To learn more about nesting, pluralization and interpolation, take a look at the in depth [documentation](./docs/creating-a-dictionary.md).
+> Note: The dictionary created above is one in it's most basic form. To learn more about nesting, pluralization and interpolation, take a look at the in depth [documentation](./docs/creating-a-dictionary.md).
 
 ### Translating dynamic content using the `translate()` method
 
