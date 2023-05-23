@@ -224,7 +224,7 @@ export class Vay<T extends Dictionary<Record<string, Phrase>>> {
             this._report(error, { token });
             return token;
         };
-        const dict = this._dicts.find(({ locale }) => locale === language || this._currentLanguage);
+        const dict = this._dicts.find(({ locale }) => locale === (language || this._currentLanguage));
 
         if (!dict) {
             return exitWithError(VayError.NO_DICT);
