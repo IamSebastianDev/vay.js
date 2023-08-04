@@ -1,7 +1,9 @@
 /** @format */
 
-export type TranslationData = {
-    [key: PropertyKey]: string;
-} & {
-    count?: number;
-};
+export type TranslationData =
+    | {
+          [key: PropertyKey]: string;
+      }
+    | {
+          count?: number;
+      };
