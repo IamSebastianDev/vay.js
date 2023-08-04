@@ -251,7 +251,7 @@ export class Vay<T extends Dictionary<Record<string, Phrase>>> {
         // incorrect.
 
         const closestIndex = Object.keys(phrase)
-            .filter((key) => +key <= getCount(count))
+            .filter((key) => +key <= getCount(count as number | undefined))
             .pop();
 
         if (Object.keys(phrase).some((key) => isNaN(+key)) || closestIndex === undefined) {
