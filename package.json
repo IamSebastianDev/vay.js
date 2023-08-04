@@ -20,7 +20,7 @@
     "esbuild": "^0.18.1",
     "husky": "^8.0.2",
     "jsdom": "^22.1.0",
-    "prettier": "^3.0.0",
+    "prettier": "^2.0.0",
     "pretty-quick": "^3.1.3",
     "rollup": "^3.27.0",
     "rollup-plugin-cleanup": "^3.2.1",
@@ -28,7 +28,7 @@
     "rollup-plugin-esbuild": "^5.0.0",
     "rollup-plugin-terser": "^7.0.2",
     "semantic-release": "^21.0.0",
-    "ts-node": "^10.9.1",
+    "tsx": "^3.12.7",
     "typescript": "^5.1.3"
   },
   "scripts": {
@@ -40,7 +40,7 @@
     "dev": "yarn build --watch",
     "lint": "alex .",
     "semantic-release": "semantic-release --branches release",
-    "test": "ava --verbose",
+    "test": "NODE_OPTIONS='--loader=tsx' ava --verbose",
     "serve": "byndly --c .config/byndly.config.mjs"
   },
   "ava": {
@@ -48,15 +48,12 @@
       "ts": "module"
     },
     "nodeArguments": [
-      "--no-warnings",
-      "--loader=ts-node/esm",
-      "--experimental-specifier-resolution=node"
+      "--loader=tsx"
     ]
   },
   "name": "vay.js",
   "version": "1.0.0",
   "repository": "https://github.com/IamSebastianDev/vay.js.git",
   "author": "Sebastian <sebastian@iamsebastian.dev>",
-  "dependencies": {},
   "unpkg": "./dist/index.browser.min.js"
 }
