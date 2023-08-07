@@ -238,7 +238,7 @@ export class Vay<T extends Dictionary<Record<string, Phrase>>> {
 
         const phrase = token.split('.').reduce((entry: any, token: string) => entry[token], phrases);
 
-        if (!phrase) {
+        if (phrase === undefined || phrase === null) {
             return exitWithError(VayError.NO_PHRASE);
         }
 
