@@ -1407,7 +1407,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:20.4.7, @types/node@npm:^20.4.1":
+"@types/node@npm:*, @types/node@npm:20.4.7":
   version: 20.4.7
   resolution: "@types/node@npm:20.4.7"
   checksum: a40d7003f66b56220a2028179e49f950b46fa6dbf860a4a6ecbd6ba7976f05b2f0b31ced39689ec88a7d9e32d07e088c6a06d270b99d5bc13a28291ac2f30ca7
@@ -1418,6 +1418,13 @@ __metadata:
   version: 18.17.2
   resolution: "@types/node@npm:18.17.2"
   checksum: 2e08acaeb30e05f96fbf3d974fc2203bf10ed9020cafd511018dbba8023044bb8758f9d5a2a8e68da3bca827ccef7628202de9b7ca3b515374a7b094b128930a
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^20.6.5":
+  version: 20.6.5
+  resolution: "@types/node@npm:20.6.5"
+  checksum: b849e849cf7631458a65c5019c81962028e306d8c4455a48422277b240f5a7eb8a1f1dafa60306bd4c773b77263bb8b05c074b1026e868bd137bb2022cf63ea2
   languageName: node
   linkType: hard
 
@@ -9513,7 +9520,7 @@ __metadata:
     "@rollup/plugin-commonjs": ^25.0.0
     "@rollup/plugin-node-resolve": ^15.1.0
     "@types/jsdom": ^21.1.1
-    "@types/node": ^20.4.1
+    "@types/node": ^20.6.5
     alex: ^11.0.0
     ava: ^5.3.0
     esbuild: ^0.19.2
