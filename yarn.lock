@@ -1069,9 +1069,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/plugin-node-resolve@npm:^15.1.0":
-  version: 15.1.0
-  resolution: "@rollup/plugin-node-resolve@npm:15.1.0"
+"@rollup/plugin-node-resolve@npm:^15.2.3":
+  version: 15.2.3
+  resolution: "@rollup/plugin-node-resolve@npm:15.2.3"
   dependencies:
     "@rollup/pluginutils": ^5.0.1
     "@types/resolve": 1.20.2
@@ -1080,11 +1080,11 @@ __metadata:
     is-module: ^1.0.0
     resolve: ^1.22.1
   peerDependencies:
-    rollup: ^2.78.0||^3.0.0
+    rollup: ^2.78.0||^3.0.0||^4.0.0
   peerDependenciesMeta:
     rollup:
       optional: true
-  checksum: 83617cdbb90cb780251e8b16dc1671e35bde90b8d4d30e008aefe706b5b643057f6299bdd3226b2a30bf5e4f807a880169de3faa47b9f2ba38d39f294f85f951
+  checksum: 730f32c2f8fdddff07cf0fca86a5dac7c475605fb96930197a868c066e62eb6388c557545e4f7d99b7a283411754c9fbf98944ab086b6074e04fc1292e234aa8
   languageName: node
   linkType: hard
 
@@ -9518,7 +9518,7 @@ __metadata:
     "@commitlint/cli": ^17.7.1
     "@commitlint/config-conventional": ^17.7.0
     "@rollup/plugin-commonjs": ^25.0.0
-    "@rollup/plugin-node-resolve": ^15.1.0
+    "@rollup/plugin-node-resolve": ^15.2.3
     "@types/jsdom": ^21.1.1
     "@types/node": ^20.8.3
     alex: ^11.0.0
