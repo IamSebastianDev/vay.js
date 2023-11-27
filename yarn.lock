@@ -8636,7 +8636,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"source-map-support@npm:^0.5.21, source-map-support@npm:~0.5.20":
+"source-map-support@npm:~0.5.20":
   version: 0.5.21
   resolution: "source-map-support@npm:0.5.21"
   dependencies:
@@ -9194,20 +9194,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsx@npm:^4.1.1":
-  version: 4.1.1
-  resolution: "tsx@npm:4.1.1"
+"tsx@npm:^4.5.0":
+  version: 4.5.0
+  resolution: "tsx@npm:4.5.0"
   dependencies:
     esbuild: ~0.18.20
     fsevents: ~2.3.3
     get-tsconfig: ^4.7.2
-    source-map-support: ^0.5.21
   dependenciesMeta:
     fsevents:
       optional: true
   bin:
     tsx: dist/cli.mjs
-  checksum: 3229cb7c1dff362e12f46fdf917ec31a03a96d02b2974ddcac43d11a4ba978d9bdfb4ddcc27a2b4da3d75f44dc22a9a0dc4f7a4aa291eba358b56714bf423527
+  checksum: c8c87092ac7fd80d9324b804da43f9fbb98663b1ad369db1d678889c70b49e99a4613b5903f9281ec70cc92613bb8fe1e5ab8229bdf5f116ca69c25d0f1a4fd2
   languageName: node
   linkType: hard
 
@@ -9697,7 +9696,7 @@ __metadata:
     rollup-plugin-esbuild: ^6.1.0
     rollup-plugin-terser: ^7.0.2
     semantic-release: ^22.0.5
-    tsx: ^4.1.1
+    tsx: ^4.5.0
     typescript: ^5.2.2
   languageName: unknown
   linkType: soft
