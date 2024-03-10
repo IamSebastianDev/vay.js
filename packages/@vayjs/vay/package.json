@@ -34,6 +34,6 @@
     "test": "NODE_OPTIONS='--import tsx' yarn ava",
     "test:coverage": "c8 yarn run test",
     "build": " rollup -c .config/rollup.config.js",
-    "dev": "yarn build --watch"
+    "dev": "rollup -c .config/rollup.config.js --watch"
   }
 }
