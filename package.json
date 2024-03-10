@@ -1,16 +1,33 @@
 {
-  "private": true, 
+  "private": true,
   "name": "vay.js",
   "version": "3.0.0",
   "license": "MIT",
   "repository": "https://github.com/IamSebastianDev/vay.js.git",
   "author": "Sebastian <sebastian@iamsebastian.dev>",
   "workspaces": [
-    "packages/**/*", 
-    "docs"
-  ], 
+    "packages/**/*",
+    "docs/"
+  ],
   "scripts": {
-    "build": "turbo build", 
-    "dev": "turbo dev"
+    "preci": "rm -rf node_modules",
+    "ci": "yarn install --frozen-lockfile",
+    "setup": "npx husky install",
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "test": "turbo test",
+    "test:coverage": "turbo test:coverage"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.0.3",
+    "@commitlint/config-conventional": "^19.0.3",
+    "alex": "^11.0.1",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.2"
+  },
+  "lint-staged": {
+    "*.{ts,css,md}": "prettier --write"
   }
 }
