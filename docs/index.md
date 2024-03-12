@@ -3,8 +3,8 @@
 layout: home
 
 hero:
-    name: 'Vayjs'
-    text: 'The minimalistic translator'
+    name: 'Vay.js'
+    text: 'The minimal translator'
     tagline: My great project tagline
     actions:
         - theme: brand
