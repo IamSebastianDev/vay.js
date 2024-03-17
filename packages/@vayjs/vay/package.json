@@ -35,5 +35,13 @@
     "test:coverage": "c8 yarn run test",
     "build": " rollup -c .config/rollup.config.js",
     "dev": "rollup -c .config/rollup.config.js --watch"
+  },
+  "ava": {
+    "extensions": {
+      "ts": "commonjs"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,css,md}": "prettier --write"
   }
 }
