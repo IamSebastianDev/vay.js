@@ -4,7 +4,7 @@
     "compilerOptions": {
         "lib": ["ES2022", "ES2021", "DOM", "ESNext"],                                   
         "module": "ESNext",                                
-        "moduleResolution": "node",                       
+        "moduleResolution": "Bundler",                       
         "resolveJsonModule": true,                        
         "esModuleInterop": true,                             
         "forceConsistentCasingInFileNames": true,           
@@ -12,7 +12,8 @@
         "noImplicitAny": true,                            
         "strictPropertyInitialization": true,            
         "noUnusedLocals": true,                           
-        "skipLibCheck": true     
+        "skipLibCheck": true,
+        "downlevelIteration": true
     },
     "exclude": ["node_modules"]
   }
