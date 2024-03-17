@@ -2,7 +2,6 @@
 .github
 .husky
 .vscode
-src
 .alexrc
 .commitlintrc.json
 .prettierignore
@@ -10,3 +9,7 @@ src
 commitlint.config.json
 tsconfig.json
 tests
+coverage
+.turbo
+src
+node_modules
