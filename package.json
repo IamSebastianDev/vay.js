@@ -16,7 +16,9 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "test": "turbo test",
-    "test:coverage": "turbo test:coverage"
+    "test:coverage": "turbo test:coverage",
+    "publish": "yarn workspace @repo/publish publish",
+    "publish:dry-run": "yarn workspace @repo/publish publish:dry-run"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.0.3",
