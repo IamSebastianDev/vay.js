@@ -12,7 +12,7 @@
     --vp-c-brand-2: var(--vp-c-accent-2);
     --vp-c-brand-3: var(--vp-c-accent-3);
 
-    --color-bg-light: rgba(254, 246, 224, 1);
+    --vp-c-bg-light: rgba(254, 246, 224, 1);
 
     --vp-home-hero-name-background: -webkit-linear-gradient(
         120deg,
@@ -27,7 +27,7 @@
 }
 
 .VPHero .image-bg {
-    background: var(--color-bg-light);
+    background: linear-gradient(-45deg, var(--vp-c-accent-3), var(--vp-c-contrast-3));
     border-radius: 50%;
     transform: unset;
     top: unset;

@@ -12,7 +12,7 @@ export default defineConfig({
         logo: '/vay.logo.transparent.png',
         nav: [
             { text: 'Home', link: '/' },
-            { text: 'Get started', link: '/documentation/docs/quick-start' },
+            { text: 'Get started', link: '/documentation/docs/getting-started' },
         ],
 
         sidebar: [

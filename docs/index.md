@@ -10,7 +10,7 @@ hero:
     actions:
         - theme: brand
           text: Get Started
-          link: /documentation/docs/quick-start
+          link: /documentation/docs/getting-started
         - theme: alt
           text: Recipes
           link: /documentation/recipes/
@@ -21,7 +21,7 @@ features:
       details: 'Vay delivers a lightweight, dependency-free experience, optimized for efficiency with full treeshakeability.'
     - icon: '🧑‍💻'
       title: 'TypeScript Optimized'
-      details: 'Our environment is tailor-made for TypeScript, offering a secure and type-safe coding experience.'
+      details: 'Vay is tailor-made for TypeScript, offering a secure and type-safe coding experience.'
     - icon: '💬'
       title: 'Contextual & Plural Support'
       details: 'Vay ensures translations are contextually accurate and grammatically precise across all languages.'
