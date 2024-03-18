@@ -7,7 +7,10 @@ import { capitalize } from './capitalize.util';
 
 export class SidebarItem implements DefaultTheme.SidebarItem {
     private format(text: string) {
-        return capitalize(text.replace('.md', ''));
+        // Format the link name
+        // Remove the '.md' file part as well
+        // as any existing sorting prefix (e.g. '01.')
+        return capitalize(text.replace('.md', '').replace(/^[0-9]*\./g, ''));
     }
 
     private entries: Dirent[] = [];
@@ -40,6 +43,7 @@ export class SidebarItem implements DefaultTheme.SidebarItem {
                 });
             }
         }
+
         // Handle index.md case
         if (this.entries.find(({ name }) => name.endsWith('index.md'))) {
             this.link = '/';
