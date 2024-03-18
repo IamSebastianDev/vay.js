@@ -1,0 +1,35 @@
+/** @format */
+:root {
+    --code-link-bg: rgba(245, 129, 51, 0.25);
+    --vp-c-accent-1: rgba(59, 177, 228, 1);
+    --vp-c-accent-2: rgba(29, 147, 198, 1);
+    --vp-c-accent-3: rgba(9, 127, 178, 1);
+    --vp-c-contrast-1: rgba(255, 149, 71, 1);
+    --vp-c-contrast-2: rgba(245, 129, 51, 1);
+    --vp-c-contrast-3: rgba(221, 103, 23, 1);
+
+    --vp-c-brand-1: var(--vp-c-accent-1);
+    --vp-c-brand-2: var(--vp-c-accent-2);
+    --vp-c-brand-3: var(--vp-c-accent-3);
+
+    --color-bg-light: rgba(254, 246, 224, 1);
+
+    --vp-home-hero-name-background: -webkit-linear-gradient(
+        120deg,
+        var(--vp-c-contrast-3) 30%,
+        var(--vp-c-contrast-1) 60%
+    );
+}
+
+.VPHero .image-container {
+    display: grid;
+    place-items: center;
+}
+
+.VPHero .image-bg {
+    background: var(--color-bg-light);
+    border-radius: 50%;
+    transform: unset;
+    top: unset;
+    left: unset;
+}

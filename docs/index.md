@@ -4,23 +4,30 @@ layout: home
 
 hero:
     name: 'Vay.js'
-    text: 'The minimal translator'
-    tagline: My great project tagline
+    text: 'I18n done right.'
+    tagline: 'Simplifying Translation for Developers Everywhere.'
+    image: './vay.logo.transparent.png'
     actions:
         - theme: brand
-          text: Markdown Examples
-          link: /markdown-examples
+          text: Get Started
+          link: /documentation/quick-start
         - theme: alt
-          text: API Examples
-          link: /api-examples
+          text: Recipes
+          link: /documentation/recipes/
 
 features:
-    - title: Feature A
-      details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-    - title: Feature B
-      details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-    - title: Feature C
-      details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    - icon: '💪🏾'
+      title: 'Compact & Independent'
+      details: 'Vay delivers a lightweight, dependency-free experience, optimized for efficiency with full treeshakeability.'
+    - icon: '🧑‍💻'
+      title: 'TypeScript Optimized'
+      details: 'Our environment is tailor-made for TypeScript, offering a secure and type-safe coding experience.'
+    - icon: '💬'
+      title: 'Contextual & Plural Support'
+      details: 'Vay ensures translations are contextually accurate and grammatically precise across all languages.'
+    - icon: '🌐'
+      title: 'Real-time Localization'
+      details: 'With real-time localization, Vay dynamically adapts content to user preferences, enhancing the global user experience.'
 ---
 
 <!-- @format -->
