@@ -3,6 +3,7 @@
 import { Phrase } from '../types/phrase';
 import { ProcessConfig } from '../types/process-config';
 import { VayProvider } from '../types/vay-provider';
+import { VayStaticProvider } from '../types/vay-static.provider';
 import { filterAttributeNames } from '../utils/filter-attribute-names';
 import { getExecutionContext } from '../utils/get-execution-environment';
 
@@ -44,7 +45,9 @@ import { getExecutionContext } from '../utils/get-execution-environment';
  * This will translate all elements within the body that match the target attribute criteria
  * set in the provider's configuration.
  */
-export const createStaticProvider = <Dict extends Record<string, Phrase>>(provider: VayProvider<Dict>) => {
+export const createStaticProvider = <Dict extends Record<string, Phrase>>(
+    provider: VayProvider<Dict>,
+): VayStaticProvider<Dict> => {
     // Processor Functions for Static Translation Provider
     const processToken = (config: ProcessConfig) => {
         const { element, key } = config;
