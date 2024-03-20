@@ -8,7 +8,11 @@
 
 [![Npm package version](https://badgen.net/npm/v/vay.js)](https://www.npmjs.com/package/vay.js)[![Npm package total downloads](https://badgen.net/npm/dt/vay.js)](https://npmjs.com/package/vay.js)[![Npm package license](https://badgen.net/npm/license/vay.js)](https://npmjs.com/package/vay.js)[![Github tag](https://badgen.net/github/tag/iamsebastiandev/vay.js)](https://github.com/iamsebastiandev/vay.js/tags)
 
-A lightweight (3kb minified), modern & dependency free internationalization (i18n) provider that features a simple API that supports nested tokens, pluralization and interpolation. **Vay** is strongly typed.
+A lightweight (3kb minified), modern & dependency free internationalization (i18n) provider that features a simple API that supports interpolation, pluralization and context.
+
+This is the project's mono repository. You can find the full documentation in the [docs](./docs/) directory or on the official [website](https://vayjs.dev).
+
+To learn more about the individual packages that are available, take a look at the [packages](./packages/@vayjs/) directory.
 
 ## Contributing
 
