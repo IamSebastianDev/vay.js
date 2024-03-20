@@ -19,6 +19,19 @@ export default defineConfig({
         sidebar: [
             new SidebarItem('/documentation/docs', 'Documentation', false),
             new SidebarItem('/documentation/recipes', 'Recipes', false),
+            // Sidebar items for the custom bindings
+            {
+                items: [
+                    {
+                        text: 'Vay & React',
+                        link: '/documentation/vay-react/',
+                    },
+                    {
+                        text: 'Vay & Svelte',
+                        link: '/documentation/vay-svelte/',
+                    },
+                ],
+            },
         ],
 
         socialLinks: [{ icon: 'github', link: 'https://github.com/IamSebastianDev/vay.js' }],
