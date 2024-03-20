@@ -8,16 +8,16 @@
 
 [![Npm package version](https://badgen.net/npm/v/vay.js)](https://www.npmjs.com/package/vay.js)[![Npm package total downloads](https://badgen.net/npm/dt/vay.js)](https://npmjs.com/package/vay.js)[![Npm package license](https://badgen.net/npm/license/vay.js)](https://npmjs.com/package/vay.js)[![Github tag](https://badgen.net/github/tag/iamsebastiandev/vay.js)](https://github.com/iamsebastiandev/vay.js/tags)
 
-A lightweight (3kb minified), modern & dependency free internationalization (i18n) provider that features a simple API that supports nested tokens, pluralization and interpolation. **Vay** is strongly typed.
+A lightweight (3kb minified), strongly typed, modern & dependency free internationalization (i18n) provider that features a simple API that supports interpolation, pluralization and context.
 
 ## Installing
 
 To use **Vay** with node and/or a bundler such as webpack or rollup, install it via yarn or npm:
 
 ```bash
-yarn add vay.js
+yarn add @vayjs/vay
 # or use npm
-npm install vay.js
+npm install @vayjs/vay
 ```
 
 You can also use it directly in the browser and include it via CDN or locally.
@@ -28,7 +28,7 @@ You can also use it directly in the browser and include it via CDN or locally.
     <!-- as a local file -->
     <script src="./your/path/to/vay.browser.min.js"></script>
     <!-- or via CDN -->
-    <script src="http://unpkg.com/vay.js"></script>
+    <script src="http://unpkg.com/@vayjs/vay"></script>
     ...
 </head>
 ```
@@ -68,6 +68,20 @@ const i18n = createProvider(
 
 > Note: The dictionary keys should follow [the ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) convention of two letter language codes.
 
+### Translating dynamic content using the `translate()` method
+
+**Vay** also provides a function to translate strings dynamically. This can prove useful when **Vay** is used with a JavaScript framework, or when translating text that is dynamically created. When using TypeScript, the method is strongly typed and will only accepts tokens that exists in the dictionary as well as provide useful autocompletion suggestions deeding on the used IDE.
+
+```ts
+import { defineConfig, defineDictionary, createProvider } from '@vayjs/vay';
+
+const i18n = createProvider(defineConfig(), defineDictionary('en', { title: 'Hello World' }));
+
+i18n.translate('title'); // Return 'Hello World'
+```
+
+> You can read more about the capabilities of the `translate` method on the official [docs](https://vayjs.dev).
+
 ### Translating static content using the `createStaticProvider` function
 
 Use the `render()` method of a **staticProvider** to translate a subset of a provided `HTML Element` and it's descendants. The method should be called after the DOM has finished rendering and is best used for static websites.
@@ -95,22 +109,6 @@ Use the `render()` method of a **staticProvider** to translate a subset of a pro
 
 The `<div>` with the `token` 'title' will have it's text-content replaced with the respective `phrase` in the dictionary,
 'Hello World'. When ever the used changes the language, you can re-render the translations.
-
-> Note: The dictionary created above is one in it's simplest form. To learn more about nesting, pluralization and interpolation, take a look at the in depth [documentation](https://github.com/IamSebastianDev/vay.js/docs/documentation/creating-a-dictionary.md).
-
-### Translating dynamic content using the `translate()` method
-
-**Vay** also provides a function to translate strings dynamically. This can prove useful when **Vay** is used with a JavaScript framework, or when translating text that is dynamically created. When using TypeScript, the method is strongly typed and will only accepts tokens that exists in the dictionary as well as provide useful autocompletion suggestions deeding on the used IDE.
-
-```ts
-import { defineConfig, defineDictionary, createProvider } from 'vay.js';
-
-const i18n = createProvider(defineConfig(), defineDictionary('en', { title: 'Hello World' }));
-
-i18n.translate('title'); // Return 'Hello World'
-```
-
-You can also provide [interpolation and pluralization](https://github.com/IamSebastianDev/vay.js/docs/documentation/pluralization-and-interpolation.md) data to improve the flexibility of the method.
 
 ## Contributing
 
