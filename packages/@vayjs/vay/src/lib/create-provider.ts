@@ -7,7 +7,7 @@ import { inferInitialLanguage } from './infer-initial-language';
 import { VayConfig } from '../types/vay-config';
 import { getExecutionContext } from '../utils/get-execution-environment';
 import { VayProvider } from '../types/vay-provider';
-import { TData, Translator } from '../types/translator';
+import { Translator } from '../types/translator';
 import { interpolateString } from './interpolate-string';
 import { getClosestIndex } from '../utils/get-closest-index';
 
@@ -129,11 +129,11 @@ export const createProvider = <
             switch (typeof phrase) {
                 // Handle Context Phrases
                 case 'function':
-                    return interpolateString(phrase(ctx), data as TData);
+                    return interpolateString(phrase(ctx), { ...data, ctx });
                 // Handle Numerical Phrases
                 case 'object':
                     const matched = phrase[getClosestIndex(Object.keys(phrase), parseInt(`${count}`))];
-                    return interpolateString(matched, tData);
+                    return interpolateString(matched, { ...tData, count });
                 // Handle Simple string Phrases
                 case 'string':
                     return interpolateString(phrase, data);
