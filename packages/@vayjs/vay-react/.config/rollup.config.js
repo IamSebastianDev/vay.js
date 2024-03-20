@@ -38,7 +38,10 @@ export default [
                 format: 'iife',
                 sourcemap: true,
                 plugins: [terser()],
-                name: 'Vay',
+                name: 'VayReact',
+                globals: {
+                    react: 'React',
+                },
             },
         ],
     }),
