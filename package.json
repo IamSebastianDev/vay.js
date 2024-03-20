@@ -12,7 +12,7 @@
   "scripts": {
     "preci": "rm -rf node_modules",
     "ci": "yarn install --frozen-lockfile",
-    "setup": "npx husky install",
+    "setup": "npx husky init",
     "build": "turbo build",
     "dev": "turbo dev",
     "test": "turbo test",
