@@ -203,7 +203,7 @@ The service can be used to control the locale. A simple setup could look like th
 
 ::: code-group
 
-```ts [/language-selector.component.ts]
+```ts [./language-selector.component.ts]
 @Component({
     // Component meta data
 })
@@ -220,7 +220,7 @@ export class LanguageComponent {
 }
 ```
 
-```html [/language-selector.component.html]
+```html [./language-selector.component.html]
 <div>
     <!-- Create buttons to change the language -->
     <button (click)="setLanguage('en')">EN</button>
@@ -259,11 +259,11 @@ Using the pipe inside a template is straightforward, and works like using all ot
 
 ::: code-group
 
-```html [/language.component.html]
+```html [./language.component.html]
 <div [title]="'core.greeting' | t">{{ 'core.greeting' | t }}</div>
 ```
 
-```ts [/language.component.ts]
+```ts [./language.component.ts]
 @Component({
     // Import the pipe if it's standalone, otherwise the module will handle it.
     imports: [TranslatePipe],
