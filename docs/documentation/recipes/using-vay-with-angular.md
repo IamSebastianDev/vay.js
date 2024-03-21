@@ -6,7 +6,7 @@ outline: deep
 
 # Using Vay with Angular
 
-[Angular](https://angular.dev) makes it hard to correctly integrate a strongly typed provider on a library level. However, integrating Vay yourself is fairly straight forward and requires only a service and a pipe.
+[Angular](https://angular.dev) makes it hard to correctly integrate a strongly typed provider on a library level. However, integrating Vay yourself is fairly straightforward and requires only a service and a pipe.
 
 ## Structuring the Project
 
@@ -29,7 +29,7 @@ core
 ```
 
 ::: info
-You are free to structure your code as you like and as your project requires, the structure presented here is just a suggestion and best practice learnt form sizeable projects.
+You are free to structure your code as you like and as your project requires. The structure presented here is just a suggestion and best practice learned from sizeable projects.
 :::
 
 There are 5 main building blocks used in this structure.
@@ -42,7 +42,7 @@ There are 5 main building blocks used in this structure.
 
 ## Providers, Dictionaries and localizations
 
-You can setup Vay as describes in the [getting started](../docs/02.getting-started.md) section.
+You can set up Vay as describes in the [getting started](../docs/02.getting-started.md) section.
 
 -   Create a file for the `Dictionary` and `localizations` you want to use:
 
@@ -85,7 +85,7 @@ export const provider = createProvider(
 
 ## The `I18nService`
 
-The core element of Vay's Angular integration is the `I18nService`. The service controls the set locale, methods to set the locale as well as holding the translation method that will be used by the pipe later.
+The core element of Vay's Angular integration is the `I18nService`. The service controls the set locale, methods to set the locale, and holds the translation method that will be used by the pipe later.
 
 ::: code-group
 
@@ -139,7 +139,7 @@ The Service is a simple wrapper for Vay's functionality. You can extend it in an
 
 ## The Pipe
 
-The pipe is then finally used to transform the tokens into a corresponding phrase. As Angular's pure pipes are memoized by default, (meaning no rerenders on locale change), we need to use a impure pipe and implement the memoization part by ourself.
+The pipe is then finally used to transform the tokens into a corresponding phrase. As Angular's pure pipes are memoized by default (meaning no rerenders on locale change), we need to use an impure pipe and implement the memoization part ourselves.
 
 ::: code-group
 
@@ -290,6 +290,6 @@ export class LanguageComponent {
 ## Best practices
 
 -   **Keep your localization files with your pages / components**: This allows you to find and update phrases easier in case of requirement changes.
--   **Keep your localization files small**: The larger the file, the harder it gets to maintain. In larger applications, maintainability is the key to sustained growth
+-   **Keep your localization files small**: The larger the file, the harder it gets to maintain. In larger applications, maintainability is key to sustained growth.
 -   **Namespace your Localization files per module**: Giving your tokens a semantic structure makes it easier to infer tokens.
 -   **Interpolation Mechanism**: Vay's usual interpolation, pluralization and contextualization mechanisms work the same way in angular as they do in vanilla JavaScript. Use them to your advantage.
