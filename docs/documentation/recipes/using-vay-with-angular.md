@@ -44,22 +44,32 @@ There are 5 main building blocks used in this structure.
 
 You can setup Vay as describes in the [getting started](../docs/02.getting-started.md) section.
 
--   Create a file for the `Dictionary`:
+-   Create a file for the `Dictionary` and `localizations` you want to use:
 
-```ts
-// i18n.dictionary.en.ts
+::: code-group
+
+```ts [./i18n.dictionary.en.ts]
 import { defineDictionary } from '@vayjs/vay';
 import core from '../localizations/core.localization.en';
 
-export default en = defineDictionary('en', {
+export default defineDictionary('en', {
     core, // Add the localization object to the dictionary.
 });
 ```
 
+```ts [./core.localization.en.ts]
+export default {
+    greeting: 'Hello, Vay & Angular.',
+};
+```
+
+:::
+
 -   Create the `Provider`:
 
-```ts
-// i18n.provider.ts
+::: code-group
+
+```ts [./i18n.provider.ts]
 import { createProvider, defineConfig, getDefaultBrowserLanguage } from '@vayjs/vay';
 import dict_en from './i18n.dictionary.en';
 
@@ -71,15 +81,15 @@ export const provider = createProvider(
 );
 ```
 
+:::
+
 ## The `I18nService`
 
 The core element of Vay's Angular integration is the `I18nService`. The service controls the set locale, methods to set the locale as well as holding the translation method that will be used by the pipe later.
 
-```ts
-// i18n.service.ts
+::: code-group
 
-/** @format */
-
+```ts [./i18n.service.ts]
 import { EventEmitter, Inject, Injectable, OnDestroy } from '@angular/core';
 import { ISO639Code } from '@vayjs/vay';
 import { BehaviorSubject, takeUntil } from 'rxjs';
@@ -123,17 +133,17 @@ export class I18nService implements OnDestroy {
 }
 ```
 
+:::
+
 The Service is a simple wrapper for Vay's functionality. You can extend it in any way you like.
 
 ## The Pipe
 
 The pipe is then finally used to transform the tokens into a corresponding phrase. As Angular's pure pipes are memoized by default, (meaning no rerenders on locale change), we need to use a impure pipe and implement the memoization part by ourself.
 
-```ts
-// /pipes/translate.pipe.ts
+::: code-group
 
-/** @format */
-
+```ts [./pipes/translate.pipe.ts]
 import { Pipe, inject, type PipeTransform, EventEmitter, OnDestroy } from '@angular/core';
 import { I18nService } from './i18n.service';
 import { takeUntil } from 'rxjs';
@@ -196,6 +206,8 @@ export class TranslatePipe implements PipeTransform, OnDestroy {
     }
 }
 ```
+
+:::
 
 ## Using the `I18nService`
 
