@@ -15,6 +15,7 @@
     "setup": "npx husky init",
     "build": "turbo build",
     "dev": "turbo dev",
+    "dev:docs": "yarn workspace @repo/docs docs:dev",
     "test": "turbo test",
     "test:coverage": "turbo test:coverage",
     "publish": "yarn workspace @repo/publish publish",
