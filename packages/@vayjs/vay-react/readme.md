@@ -8,6 +8,12 @@
 
 A React-specific extension of Vay.js, providing a lightweight (additional 1kb minified), strongly typed, and modern solution for integrating the Vay.js internationalization (i18n) capabilities into your React applications. It features simple React hooks and providers for managing language contexts, supporting interpolation, pluralization, and context seamlessly within React components.
 
+## Features
+
+-   **Easy Integration**: Seamlessly add internationalization support to your React apps with minimal boilerplate.
+-   **React Hooks**: Utilize custom hooks for language switching and accessing translation functionalities.
+-   **Dynamic Language Switching**: Change languages on the fly and re-render your components automatically to reflect the updates.
+
 ## Installing
 
 To use @vayjs/vay-react with your React project, install it via yarn or npm along with @vayjs/vay if you haven't already:
@@ -63,12 +69,6 @@ function YourComponent() {
     );
 }
 ```
-
-## Features
-
--   **Easy Integration**: Seamlessly add internationalization support to your React apps with minimal boilerplate.
--   **React Hooks**: Utilize custom hooks for language switching and accessing translation functionalities.
--   **Dynamic Language Switching**: Change languages on the fly and re-render your components automatically to reflect the updates.
 
 ## License
 
