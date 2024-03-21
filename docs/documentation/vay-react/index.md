@@ -52,7 +52,7 @@ These packages provide the core functionalities needed to manage translations an
 
 ## Setup
 
-Before integrating `@vayjs/vay-react` into your application, you'll need to set up a `VayProvider` instance from `@vayjs/vay`. Here's how to create and configure your provider:
+Before integrating `@vayjs/vay-react` into your application, you'll need to set up a `VayProvider` instance from `@vayjs/vay`.
 
 ```ts
 import { defineConfig, defineDictionary, createProvider } from '@vayjs/vay';

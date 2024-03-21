@@ -52,7 +52,7 @@ These packages equip you with the essential tools needed to facilitate translati
 
 ## Setup
 
-Before weaving `@vayjs/vay-svelte` into your Svelte application, create a `VayProvider` instance from `@vayjs/vay`. Here’s a step-by-step guide on setting up your provider:
+Before weaving `@vayjs/vay-svelte` into your Svelte application, create a `VayProvider` instance from `@vayjs/vay`:
 
 ```ts
 import { defineConfig, defineDictionary, createProvider } from '@vayjs/vay';
