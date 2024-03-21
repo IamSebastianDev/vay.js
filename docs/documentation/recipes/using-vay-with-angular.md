@@ -197,7 +197,42 @@ export class TranslatePipe implements PipeTransform, OnDestroy {
 }
 ```
 
-## Usage
+## Using the `I18nService`
+
+The service can be used to control the locale. A simple setup could look like this:
+
+::: code-group
+
+```ts [/language-selector.component.ts]
+@Component({
+    // Component meta data
+})
+export class LanguageComponent {
+    i18nService = inject(I18nService);
+
+    // Method to change the locale
+    setLanguage(locale: ISO639Code) {
+        this.i18nService.setLanguage(locale);
+    }
+
+    // Extract the locale$ Observable from the service
+    locale$ = this.i18nService.locale$;
+}
+```
+
+```html [/language-selector.component.html]
+<div>
+    <!-- Create buttons to change the language -->
+    <button (click)="setLanguage('en')">EN</button>
+    <button (click)="setLanguage('es')">ES</button>
+    <!-- Display the current locale -->
+    <span>{{ locale$ | async }}</span>
+</div>
+```
+
+:::
+
+## Using the `TranslatePipe`
 
 With all elements created it's time to use the created pipe in one of our components. Generally speaking, there will be two different locations where you'll want to use the pipe. Classes and Templates.
 
@@ -239,3 +274,10 @@ export class LanguageComponent {
 ```
 
 :::
+
+## Best practices
+
+-   **Keep your localization files with your pages / components**: This allows you to find and update phrases easier in case of requirement changes.
+-   **Keep your localization files small**: The larger the file, the harder it gets to maintain. In larger applications, maintainability is the key to sustained growth
+-   **Namespace your Localization files per module**: Giving your tokens a semantic structure makes it easier to infer tokens.
+-   **Interpolation Mechanism**: Vay's usual interpolation, pluralization and contextualization mechanisms work the same way in angular as they do in vanilla JavaScript. Use them to your advantage.
