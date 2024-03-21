@@ -30,6 +30,10 @@ export default defineConfig({
                         text: 'Vay & Svelte',
                         link: '/documentation/vay-svelte/',
                     },
+                    {
+                        text: 'Vay & Angular',
+                        link: '/documentation/vay-angular/',
+                    },
                 ],
             },
         ],

@@ -1,10 +1,12 @@
 ---
 outline: deep
+next: false
+prev: false
 ---
 
 <!-- @format -->
 
-# Using Vay with Angular
+# Vay & Angular
 
 [Angular](https://angular.dev) makes it hard to correctly integrate a strongly typed provider on a library level. However, integrating Vay yourself is fairly straightforward and requires only a service and a pipe.
 
