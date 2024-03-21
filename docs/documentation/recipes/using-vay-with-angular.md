@@ -10,7 +10,7 @@ outline: deep
 
 ## Structuring the Project
 
-Create a new director `i18n` inside your core directory / module. This directory will hold the service, as well as the provider and the dictionaries. Below you'll see a suggestion on how your setup might look like.
+Create a new directory `i18n` inside your core directory / module. This directory will hold the service, as well as the provider and the dictionaries. Below you'll see a suggestion on how your setup might look like.
 
 ```sh
 core
