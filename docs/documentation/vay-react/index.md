@@ -10,6 +10,10 @@ previous: false
 
 **@vayjs/vay-react** serves as the definitive bridge between **Vay** and the [React](https://react.dev) ecosystem, facilitating a seamless blend of advanced internationalization features with React's dynamic UI capabilities. This guide is your comprehensive resource for incorporating efficient, type-safe i18n solutions into your React projects, enhancing global reach with minimal effort.
 
+::: info
+You can find the package and additional information [here](https://npmjs.com/package/@vayjs/vay-react).
+:::
+
 ## Features
 
 -   **React Hooks**: Use custom hooks like useLanguage to manage translations and language state within your components.
@@ -105,3 +109,7 @@ function Greeting() {
     );
 }
 ```
+
+::: tip
+The `translate` function exposed by the `useLanguage` hook works the same way as the `translate` function of **Vay**. Read more about how to [interpolate](../docs/06.interpolation.md), [pluralize](../docs/07.pluralization.md) and [contextualize](../docs/08.context.md) in the **Vay** [documentation](../docs/05.translating.md).
+:::
