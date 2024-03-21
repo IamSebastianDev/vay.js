@@ -6,9 +6,9 @@ previous: false
 
 <!-- @format -->
 
-# @vayjs/vay-react
+# Vay & React
 
-**@vayjs/vay-react** serves as the definitive bridge between **Vay** and the [React](https://react.dev) ecosystem, facilitating a seamless blend of advanced internationalization features with React's dynamic UI capabilities. This guide is your comprehensive resource for incorporating efficient, type-safe i18n solutions into your React projects, enhancing global reach with minimal effort.
+[**@vayjs/vay-react**](https://npmjs.com/package/@vayjs/vay-react) serves as the definitive bridge between **Vay** and the [React](https://react.dev) ecosystem, facilitating a seamless blend of advanced internationalization features with React's dynamic UI capabilities. This guide is your comprehensive resource for incorporating efficient, type-safe i18n solutions into your React projects, enhancing global reach with minimal effort.
 
 ::: info
 You can find the package and additional information [here](https://npmjs.com/package/@vayjs/vay-react).
