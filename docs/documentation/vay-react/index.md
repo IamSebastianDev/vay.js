@@ -1,7 +1,7 @@
 ---
 outline: deep
 next: false
-previous: false
+prev: false
 ---
 
 <!-- @format -->
