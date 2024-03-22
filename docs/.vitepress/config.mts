@@ -31,6 +31,10 @@ export default defineConfig({
                         link: '/documentation/vay-svelte/',
                     },
                     {
+                        text: 'Vay & Nørd',
+                        link: '/documentation/vay-nord/',
+                    },
+                    {
                         text: 'Vay & Angular',
                         link: '/documentation/vay-angular/',
                     },
