@@ -1,0 +1,16 @@
+{
+  "name": "@repo/publish",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "publish": "tsx publish.ts",
+    "publish:dry-run": "tsx publish.ts --dry-run"
+  },
+  "devDependencies": {
+    "kolorist": "^1.8.0",
+    "tsx": "^4.7.1",
+    "@repo/typescript-config": "0.0.0"
+  }
+}
