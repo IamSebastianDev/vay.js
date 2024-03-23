@@ -1,0 +1,8 @@
+{ 
+  "include": ["./src/**/*.ts", "src/context/create-language-provider.tsx"],
+  "exclude": ["node_modules/*", "public/*"],
+  "extends": "@repo/typescript-config/base.json",
+  "compilerOptions": {
+    "jsx": "react",
+  }
+}
