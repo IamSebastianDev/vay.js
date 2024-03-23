@@ -4,15 +4,17 @@
  * @format
  */
 
-const bootstrap = ({ defineConfig, defineDictionary, Vay }) => {
-    // Your bootstrapping code goes here.
-    console.log({ defineConfig, defineDictionary, Vay });
-};
-/**
- * @type { import("byndly").UserConfig }
- */
+import { defineConfig } from 'byndly';
 
-export default {
+const bootstrap = (exports) => {
+    /**
+     * Your bootstrapping code goes here.
+     * Read more about bootstrapping: https://github.com/IamSebastianDev/byndly
+     */
+    console.log({ exports });
+};
+
+export default defineConfig({
     // indicate that the bundle is a es6 module and needs
     // to be imported to be available
     module: true,
@@ -33,5 +35,7 @@ export default {
     // Silence the console output?
     quiet: false,
     // Set a name for the browser window
-    name: 'vay.js',
-};
+    name: undefined,
+    // A optional template to use
+    template: undefined,
+});

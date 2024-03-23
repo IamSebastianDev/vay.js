@@ -19,7 +19,8 @@
     "test": "turbo test",
     "test:coverage": "turbo test:coverage",
     "publish": "yarn workspace @repo/publish publish",
-    "publish:dry-run": "yarn workspace @repo/publish publish:dry-run"
+    "publish:dry-run": "yarn workspace @repo/publish publish:dry-run",
+    "serve": "yarn workspace @vayjs/vay serve --open"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.0.3",
