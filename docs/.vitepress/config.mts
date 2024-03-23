@@ -72,5 +72,10 @@ export default defineConfig({
             message: 'Released under the MIT License.',
             copyright: 'Copyright © 2024-present Sebastian Heinz',
         },
+        // Show the edit link at the bottom of the page
+        editLink: {
+            text: 'Like to contribute? Edit on Github!',
+            pattern: 'https://github.com/iamsebastiandev/vayjs/edit/main/docs/:path',
+        },
     },
 });
