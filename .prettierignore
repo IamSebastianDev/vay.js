@@ -5,3 +5,4 @@
 license.md
 node_modules
 !.config
+!.vitepress

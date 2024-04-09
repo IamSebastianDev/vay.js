@@ -1,0 +1,15 @@
+.config
+.github
+.husky
+.vscode
+.alexrc
+.commitlintrc.json
+.prettierignore
+.prettierrc
+commitlint.config.json
+tsconfig.json
+tests
+coverage
+.turbo
+src
+node_modules
