@@ -21,7 +21,7 @@
     "@repo/typescript-config": "0.0.0",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
-    "@types/node": "^20.11.25",
+    "@types/node": "^20.12.6",
     "ava": "^6.1.2",
     "byndly": "^2.0.1",
     "c8": "^9.1.0",
