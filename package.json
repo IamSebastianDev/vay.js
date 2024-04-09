@@ -19,8 +19,6 @@
     "docs:build": "yarn workspace @repo/docs docs:build",
     "test": "turbo test",
     "test:coverage": "turbo test:coverage",
-    "publish": "yarn workspace @repo/publish publish",
-    "publish:dry-run": "yarn workspace @repo/publish publish:dry-run",
     "serve": "yarn workspace @vayjs/vay serve --open"
   },
   "devDependencies": {

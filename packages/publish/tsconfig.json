@@ -1,5 +1,0 @@
-{ 
-  "include": ["./publish.ts"],
-  "exclude": ["node_modules/*"],
-  "extends": "@repo/typescript-config/base.json",
-}
