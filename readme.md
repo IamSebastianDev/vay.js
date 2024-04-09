@@ -6,7 +6,7 @@
 
 # Vay.js
 
-[![Npm package version](https://badgen.net/npm/v/vay.js)](https://www.npmjs.com/package/vay.js)[![Npm package total downloads](https://badgen.net/npm/dt/vay.js)](https://npmjs.com/package/vay.js)[![Npm package license](https://badgen.net/npm/license/vay.js)](https://npmjs.com/package/vay.js)[![Github tag](https://badgen.net/github/tag/iamsebastiandev/vay.js)](https://github.com/iamsebastiandev/vay.js/tags)
+[![Npm package version](https://badgen.net/npm/v/@vayjs/vay)](https://www.npmjs.com/package/@vayjs/vay)[![Npm package total downloads](https://badgen.net/npm/dt/@vayjs/vay)](https://npmjs.com/package/@vayjs/vay)[![Npm package license](https://badgen.net/npm/license/@vayjs/vay)](https://npmjs.com/package/@vayjs/vay)[![Github tag](https://badgen.net/github/tag/iamsebastiandev/vay.js)](https://github.com/iamsebastiandev/vay.js/tags)
 
 A lightweight (3kb minified), modern & dependency free internationalization (i18n) provider that features a simple API that supports interpolation, pluralization and context.
 
