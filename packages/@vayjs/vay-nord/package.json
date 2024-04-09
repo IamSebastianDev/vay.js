@@ -13,6 +13,7 @@
     "import": "./dist/index.mjs",
     "types": "./dist/types/index.d.ts"
   },
+  "publishConfig": {"access": "public"},
   "devDependencies": {
     "@grainular/nord": "^1.11.0",
     "@repo/typescript-config": "0.0.0",
