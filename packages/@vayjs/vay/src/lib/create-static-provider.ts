@@ -57,7 +57,8 @@ export const createStaticProvider = <Dict extends Record<string, Phrase>>(
         const phrase = provider.translate(token);
 
         // Check if the phrase should be inserted as HTML or Text
-        const insertAs = element.hasAttribute(`${key}-html\\`) ? 'innerHTML' : 'innerText';
+        const insertAs = element.hasAttribute(`${key}-html`) ? 'innerHTML' : 'innerText';
+        console.log({ token, phrase, insertAs });
         element[insertAs] = phrase;
     };
 
