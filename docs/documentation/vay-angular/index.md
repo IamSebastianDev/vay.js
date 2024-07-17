@@ -92,16 +92,16 @@ The core element of Vay's Angular integration is the `I18nService`. The service 
 ::: code-group
 
 ```ts [./i18n.service.ts]
-import { EventEmitter, Inject, Injectable, OnDestroy } from '@angular/core';
+import { EventEmitter, Inject, Injectable, DestroyRef, takeUntilDestroyed } from '@angular/core';
 import { ISO639Code } from '@vayjs/vay';
-import { BehaviorSubject, takeUntil } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { provider } from './i18n.provider';
 
 @Injectable({
     providedIn: 'root',
 })
-export class I18nService implements OnDestroy {
-    private terminated = new EventEmitter();
+export class I18nService {
+    private readonly destroyed$ = inject(DestroyRef);
     private readonly provider = provider;
 
     // The current locale
@@ -110,7 +110,7 @@ export class I18nService implements OnDestroy {
 
     constructor() {
         // Subscribe to the locale to the set the language of the provider accordingly
-        this._locale.pipe(takeUntil(this.terminated.asObservable())).subscribe((locale) => {
+        this._locale.pipe(takeUntilDestroyed(this.destroyed$)).subscribe((locale) => {
             this.provider?.setLanguage(locale);
         });
     }
@@ -128,10 +128,6 @@ export class I18nService implements OnDestroy {
     getLanguage() {
         return this._locale.value;
     }
-
-    ngOnDestroy() {
-        this.terminated.emit();
-    }
 }
 ```
 
@@ -146,9 +142,8 @@ The pipe is then finally used to transform the tokens into a corresponding phras
 ::: code-group
 
 ```ts [./pipes/translate.pipe.ts]
-import { Pipe, inject, type PipeTransform, EventEmitter, OnDestroy } from '@angular/core';
+import { Pipe, inject, type PipeTransform, EventEmitter, DestroyRef, takeUntilDestroyed } from '@angular/core';
 import { I18nService } from './i18n.service';
-import { takeUntil } from 'rxjs';
 
 @Pipe({
     // You can choose any name you want. We choose `t` because it's short.
@@ -159,8 +154,8 @@ import { takeUntil } from 'rxjs';
     // Depending on your setup, you might want to change this to false.
     standalone: true,
 })
-export class TranslatePipe implements PipeTransform, OnDestroy {
-    private readonly terminated = new EventEmitter();
+export class TranslatePipe implements PipeTransform {
+    private readonly destroyed$ = inject(DestroyRef);
     private readonly i18nProvider = inject(I18nService);
 
     // Set up the properties used for memoization
@@ -170,7 +165,7 @@ export class TranslatePipe implements PipeTransform, OnDestroy {
 
     constructor() {
         // Subscribe to the locale to set the pipe to dirty.
-        this.i18nProvider.locale$.pipe(takeUntil(this.terminated.asObservable())).subscribe(() => {
+        this.i18nProvider.locale$.pipe(takeUntilDestroyed(this.destroyed$)).subscribe(() => {
             this.dirty = true;
         });
     }
