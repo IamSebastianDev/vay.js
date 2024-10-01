@@ -29,7 +29,7 @@
     "rollup-plugin-esbuild": "^6.1.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-terser": "^7.0.2",
-    "tsx": "^4.16.0",
+    "tsx": "^4.19.1",
     "typescript": "^5.4.2"
   },
   "peerDependencies": {
