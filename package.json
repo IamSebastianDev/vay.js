@@ -22,7 +22,7 @@
     "serve": "yarn workspace @vayjs/vay serve --open"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.3.0",
+    "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.2.2",
     "alex": "^11.0.1",
     "husky": "^9.1.6",
