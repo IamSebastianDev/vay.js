@@ -22,7 +22,7 @@
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@types/node": "^22.10.3",
-    "ava": "^6.1.2",
+    "ava": "^6.2.0",
     "byndly": "^2.0.1",
     "c8": "^10.1.2",
     "esbuild": "^0.24.2",
