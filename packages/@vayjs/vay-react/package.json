@@ -20,7 +20,7 @@
   "devDependencies": {
     "@repo/typescript-config": "0.0.0",
     "@rollup/plugin-commonjs": "^25.0.7",
-    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-node-resolve": "^16.0.0",
     "@types/node": "^22.10.3",
     "@types/react": "^18.2.67",
     "@vayjs/vay": "^2.0.0",
