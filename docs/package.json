@@ -13,7 +13,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "vitepress": "^1.5.0",
+    "vitepress": "^1.6.3",
     "vue": "^3.4.21",
     "@repo/typescript-config": "0.0.0"
   }
