@@ -3,20 +3,22 @@ name: Release Vay.js Packages
 on:
   push:
     branches:
-      - main
-      - "release/*"
+      - "release/*"  # PRs can be merged into main to trigger release
 
 permissions:
-  contents: write # Needed to commit version updates
+  contents: write  # Needed for committing version updates
+  pull-requests: write  # Needed for opening a PR
 
 jobs:
-  release:
+  version-bump:
     runs-on: ubuntu-latest
+    outputs:
+      new_version: ${{ steps.versioning.outputs.new_version }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Required for commit history
+          fetch-depth: 0
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
@@ -29,10 +31,8 @@ jobs:
       - name: Determine Next Version (From @vayjs/vay)
         id: versioning
         run: |
-          MASTER_PACKAGE="packages/@vayjs/vay"
-
+          MASTER_PACKAGE="packages/@vay/vay"
           CURRENT_VERSION=$(jq -r .version $MASTER_PACKAGE/package.json)
-          echo "Current master package version: $CURRENT_VERSION"
 
           if git log -1 --pretty=%B | grep -iqE "^(feat|feature):"; then
             NEW_VERSION=$(bunx semver $CURRENT_VERSION --increment minor)
@@ -49,45 +49,31 @@ jobs:
 
       - name: Update All Package Versions
         run: |
-          MASTER_PACKAGE="packages/@vayjs/vay"
+          MASTER_PACKAGE="packages/@vay/vay"
 
-          # Update version in the master package
           jq --arg version "$NEW_VERSION" '.version = $version' "$MASTER_PACKAGE/package.json" > temp.json && mv temp.json "$MASTER_PACKAGE/package.json"
 
-          # Update version in all other packages
-          for package in packages/@vayjs/*; do
+          for package in packages/@vay/*; do
             if [ -f "$package/package.json" ]; then
               jq --arg version "$NEW_VERSION" '.version = $version' "$package/package.json" > temp.json && mv temp.json "$package/package.json"
             fi
           done
 
-      - name: Commit Version Updates
+      - name: Create Version Bump Branch
         run: |
+          BRANCH_NAME="release/version-bump-${{ env.new_version }}"
+          git checkout -b $BRANCH_NAME
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add packages/@vayjs/**/package.json
-          git commit -m "chore: bump version to $NEW_VERSION" || echo "No changes to commit"
-          git tag "v$NEW_VERSION"
-          git push --follow-tags
+          git add packages/@vay/**/package.json
+          git commit -m "chore: bump version to $NEW_VERSION"
+          git push origin $BRANCH_NAME
 
-      - name: Dry Run Publishing All Packages
-        run: |
-          echo "Performing dry run for all packages..."
-          for package in packages/@vayjs/*; do
-            if [ -f "$package/package.json" ]; then
-              echo "Dry run for $(basename $package)..."
-              (cd "$package" && bun publish --dry-run)
-            fi
-          done
-
-    #   - name: Publish All Packages
-    #     env:
-    #       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-    #     run: |
-    #       echo "Publishing all packages..."
-    #       for package in packages/@vayjs/*; do
-    #         if [ -f "$package/package.json" ]; then
-    #           echo "Publishing $(basename $package)..."
-    #           (cd "$package" && bun publish --access public)
-    #         fi
-    #       done
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          title: "chore: bump version to ${{ env.new_version }}"
+          body: "This PR updates the version to ${{ env.new_version }}."
+          base: main
+          branch: release/version-bump-${{ env.new_version }}
+          labels: "release, automated"

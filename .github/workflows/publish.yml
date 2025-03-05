@@ -1,0 +1,54 @@
+name: Publish Vay.js Packages
+
+on:
+  push:
+    branches:
+      - main  # Only runs when a PR is merged into main
+
+permissions:
+  contents: write  # Required to push tags
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Install Dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Create Version Tag
+        run: |
+          NEW_VERSION=$(jq -r .version packages/@vay/vay/package.json)
+          git tag "v$NEW_VERSION"
+          git push origin "v$NEW_VERSION"
+
+      - name: Dry Run Publishing All Packages
+        run: |
+          echo "Performing dry run for all packages..."
+          for package in packages/@vay/*; do
+            if [ -f "$package/package.json" ]; then
+              echo "Dry run for $(basename $package)..."
+              (cd "$package" && bun publish --dry-run)
+            fi
+          done
+
+      - name: Publish All Packages
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          echo "Publishing all packages..."
+          for package in packages/@vay/*; do
+            if [ -f "$package/package.json" ]; then
+              echo "Publishing $(basename $package)..."
+              (cd "$package" && bun publish --access public)
+            fi
+          done
