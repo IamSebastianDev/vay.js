@@ -10,9 +10,9 @@ A React-specific extension of Vay.js, providing a lightweight (additional 1kb mi
 
 ## Features
 
--   **Easy Integration**: Seamlessly add internationalization support to your React apps with minimal boilerplate.
--   **React Hooks**: Utilize custom hooks for language switching and accessing translation functionalities.
--   **Dynamic Language Switching**: Change languages on the fly and re-render your components automatically to reflect the updates.
+- **Easy Integration**: Seamlessly add internationalization support to your React apps with minimal boilerplate.
+- **React Hooks**: Utilize custom hooks for language switching and accessing translation functionalities.
+- **Dynamic Language Switching**: Change languages on the fly and re-render your components automatically to reflect the updates.
 
 ## Installing
 

@@ -16,9 +16,9 @@ For more details about the package, visit it on [npm](https://npmjs.com/package/
 
 ## Features
 
--   **Svelte Stores**: Harness Svelte stores to reactively manage translations and language states across your components.
--   **Reactive Language Switching**: Seamlessly transition your application's current language using Svelte's reactivity, ensuring updates are reflected across your UI instantaneously.
--   **TypeScript Integration**: Embrace TypeScript for its type safety benefits, guaranteeing the usage of defined translation keys and enhancing developer experience with IDE autocompletion.
+- **Svelte Stores**: Harness Svelte stores to reactively manage translations and language states across your components.
+- **Reactive Language Switching**: Seamlessly transition your application's current language using Svelte's reactivity, ensuring updates are reflected across your UI instantaneously.
+- **TypeScript Integration**: Embrace TypeScript for its type safety benefits, guaranteeing the usage of defined translation keys and enhancing developer experience with IDE autocompletion.
 
 ## Installation
 

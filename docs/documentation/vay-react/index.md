@@ -16,9 +16,9 @@ You can find the package and additional information [here](https://npmjs.com/pac
 
 ## Features
 
--   **React Hooks**: Use custom hooks like useLanguage to manage translations and language state within your components.
--   **Dynamic Language Switching**: Easily change the application's current language with setLanguage, triggering automatic re-renders of translated content.
--   **Type Safety**: Leverage TypeScript for type-safe translations, ensuring that only defined translation keys are used and autocomplete suggestions are provided in supported IDEs.
+- **React Hooks**: Use custom hooks like useLanguage to manage translations and language state within your components.
+- **Dynamic Language Switching**: Easily change the application's current language with setLanguage, triggering automatic re-renders of translated content.
+- **Type Safety**: Leverage TypeScript for type-safe translations, ensuring that only defined translation keys are used and autocomplete suggestions are provided in supported IDEs.
 
 ## Installation
 
