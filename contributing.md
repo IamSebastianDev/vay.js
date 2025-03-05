@@ -10,27 +10,25 @@ The following tools and softwares are necessary to develop this application:
 
 | name    | version             | link                                        |
 | ------- | ------------------- | ------------------------------------------- |
-| Node.js | ^18.x (recommended) | [Node.js v18](https://nodejs.org/en/)       |
-| yarn    | ^1.22.x             | [yarn](https://yarnpkg.com/getting-started) |
+| bun     | ^1.2.x               | [bun](https://bun.sh) |
 
 After installing the necessary tools, you can run the commands below to start developing.
 
 ## Development - Setting Up The Repository
 
 - clone the repository by running `git clone https://github.com/IamSebastianDev/vay.js.git` in your terminal or shell to clone the repo into the current directory.
-- run `yarn` or `yarn install` to install the dependencies.
-- run `yarn setup`. This will install the necessary husky scripts.
+- run `bun` or `bun install` to install the dependencies.
 
 ## Development - CLI Commands
 
-- `yarn preci`: Removes all files inside the node_modules folder. Is part of the repository setup.
-- `yarn ci`: Installs all dependencies without generating a lockfile and throws and error if an update is needed.
-- `yarn setup`: Installs husky and the hooks
-- `yarn build`: Builds the library
-- `yarn dev`: Build the library in watch mode
-- `yarn lint`: Runs [alex](https://alexjs.com) as linter
-- `yarn test`: Runs [AVA](https://github.com/avajs/ava) with the tests supplied in the `tests` directory
-- `yarn serve`: Serves the library into a minimal browser environment using [byndly](https://github.com/IamSebastianDev/byndly)
+- `bun preci`: Removes all files inside the node_modules folder. Is part of the repository setup.
+- `bun ci`: Installs all dependencies without generating a lockfile and throws and error if an update is needed.
+- `bun setup`: Installs husky and the hooks
+- `bun build`: Builds the library
+- `bun dev`: Build the library in watch mode
+- `bun lint`: Runs [alex](https://alexjs.com) as linter
+- `bun test`: Runs [AVA](https://github.com/avajs/ava) with the tests supplied in the `tests` directory
+- `bun serve`: Serves the library into a minimal browser environment using [byndly](https://github.com/IamSebastianDev/byndly)
 
 ## Development - Enforcing Code Standards
 
