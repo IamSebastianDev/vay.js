@@ -67,13 +67,13 @@ jobs:
 
       - name: Create Version Bump Branch
         run: |
-          BRANCH_NAME="version-bump-${{ env.new_version }}"
-          git checkout -b $BRANCH_NAME
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git add packages/@vayjs/**/package.json
-          git commit -m "chore: bump version to $NEW_VERSION"
-          git push origin $BRANCH_NAME
+            BRANCH_NAME="version-bump/${{ env.new_version }}"  # ✅ New unique prefix
+            git checkout -b $BRANCH_NAME
+            git config --global user.name "GitHub Actions"
+            git config --global user.email "actions@github.com"
+            git add packages/@vay/**/package.json
+            git commit -m "chore: bump version to $NEW_VERSION"
+            git push origin $BRANCH_NAME
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
@@ -81,5 +81,5 @@ jobs:
           title: "chore: bump version to ${{ env.new_version }}"
           body: "This PR updates the version to ${{ env.new_version }}."
           base: main
-          branch: release/version-bump-${{ env.new_version }}
+          branch: version-bump/${{ env.new_version }}
           labels: "release, automated"
