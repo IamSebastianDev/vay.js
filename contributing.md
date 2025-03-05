@@ -8,9 +8,9 @@ Great that you want to contribute! Nice to have you onboard. 🚀 To get started
 
 The following tools and softwares are necessary to develop this application:
 
-| name    | version             | link                                        |
-| ------- | ------------------- | ------------------------------------------- |
-| bun     | ^1.2.x               | [bun](https://bun.sh) |
+| name | version | link                  |
+| ---- | ------- | --------------------- |
+| bun  | ^1.2.x  | [bun](https://bun.sh) |
 
 After installing the necessary tools, you can run the commands below to start developing.
 
