@@ -74,6 +74,8 @@ jobs:
             git add packages/@vayjs/**/package.json
             git commit -m "chore: bump version to $NEW_VERSION"
             git push origin $BRANCH_NAME
+            echo "Pushing branch $BRANCH_NAME to origin..."
+            git push origin $BRANCH_NAME || (echo "Git push failed!" && exit 1)
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
