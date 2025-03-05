@@ -67,7 +67,7 @@ jobs:
 
       - name: Create Version Bump Branch
         run: |
-          BRANCH_NAME="release/version-bump-${{ env.new_version }}"
+          BRANCH_NAME="version-bump-${{ env.new_version }}"
           git checkout -b $BRANCH_NAME
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
