@@ -83,3 +83,5 @@ jobs:
           base: main
           branch: version-bump/${{ env.new_version }}
           labels: "release, automated"
+          draft: false  # 🔹 Ensure it's not a draft
+          delete-branch: false  # 🔹 Keep branch for debugging
