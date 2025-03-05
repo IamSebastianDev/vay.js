@@ -17,20 +17,20 @@ After installing the necessary tools, you can run the commands below to start de
 
 ## Development - Setting Up The Repository
 
--   clone the repository by running `git clone https://github.com/IamSebastianDev/vay.js.git` in your terminal or shell to clone the repo into the current directory.
--   run `yarn` or `yarn install` to install the dependencies.
--   run `yarn setup`. This will install the necessary husky scripts.
+- clone the repository by running `git clone https://github.com/IamSebastianDev/vay.js.git` in your terminal or shell to clone the repo into the current directory.
+- run `yarn` or `yarn install` to install the dependencies.
+- run `yarn setup`. This will install the necessary husky scripts.
 
 ## Development - CLI Commands
 
--   `yarn preci`: Removes all files inside the node_modules folder. Is part of the repository setup.
--   `yarn ci`: Installs all dependencies without generating a lockfile and throws and error if an update is needed.
--   `yarn setup`: Installs husky and the hooks
--   `yarn build`: Builds the library
--   `yarn dev`: Build the library in watch mode
--   `yarn lint`: Runs [alex](https://alexjs.com) as linter
--   `yarn test`: Runs [AVA](https://github.com/avajs/ava) with the tests supplied in the `tests` directory
--   `yarn serve`: Serves the library into a minimal browser environment using [byndly](https://github.com/IamSebastianDev/byndly)
+- `yarn preci`: Removes all files inside the node_modules folder. Is part of the repository setup.
+- `yarn ci`: Installs all dependencies without generating a lockfile and throws and error if an update is needed.
+- `yarn setup`: Installs husky and the hooks
+- `yarn build`: Builds the library
+- `yarn dev`: Build the library in watch mode
+- `yarn lint`: Runs [alex](https://alexjs.com) as linter
+- `yarn test`: Runs [AVA](https://github.com/avajs/ava) with the tests supplied in the `tests` directory
+- `yarn serve`: Serves the library into a minimal browser environment using [byndly](https://github.com/IamSebastianDev/byndly)
 
 ## Development - Enforcing Code Standards
 
@@ -40,10 +40,10 @@ This project uses multiple tools to enforce code quality:
 
 The project uses [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) to ensure a certain commit message style.
 
--   `feat`: Used when adding features to the application.
--   `fix`: Used when fixing a bug or issue.
--   `refactor`: Used when changing or improving code that is not a new feature or bug.
--   `chore`: Used when updating non application related code.
+- `feat`: Used when adding features to the application.
+- `fix`: Used when fixing a bug or issue.
+- `refactor`: Used when changing or improving code that is not a new feature or bug.
+- `chore`: Used when updating non application related code.
 
 ### Formatting
 
@@ -66,4 +66,4 @@ If you add new functionality, tests should be added. The project uses [AVA](http
 
 ## Development - Github Actions
 
--   Publish: A automatic action that is triggered when merging into the `release` branch. Will create a new Release and publish it to npm.
+- Publish: A automatic action that is triggered when merging into the `release` branch. Will create a new Release and publish it to npm.

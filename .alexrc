@@ -1,3 +1,17 @@
-{ 
-  "allow": ["husky", "hook", "hooks"] 
+{
+  "allow": [
+    "husky",
+    "hook",
+    "hooks",
+    "straightforward",
+    "just",
+    "easily",
+    "simple",
+    "harder",
+    "easy",
+    "special",
+    "clearly",
+    "dive",
+    "fellow"
+  ]
 }

@@ -10,9 +10,9 @@ A Svelte-specific extension of Vay.js, offering a lightweight (additional 1kb mi
 
 ## Features
 
--   **Seamless Svelte Integration**: Designed specifically for Svelte, this extension enables you to add i18n support with minimal setup.
--   **Reactive Language Management**: Leverage Svelte's reactivity to manage languages and translations dynamically within your components.
--   **Type Safety and Autocompletion**: Enjoy the benefits of TypeScript for safer development and efficient coding with autocomplete suggestions.
+- **Seamless Svelte Integration**: Designed specifically for Svelte, this extension enables you to add i18n support with minimal setup.
+- **Reactive Language Management**: Leverage Svelte's reactivity to manage languages and translations dynamically within your components.
+- **Type Safety and Autocompletion**: Enjoy the benefits of TypeScript for safer development and efficient coding with autocomplete suggestions.
 
 ## Installing
 
