@@ -1,9 +1,15 @@
 name: Release Vay.js Packages
 
 on:
-  push:
-    branches:
-      - "release/*"  # PRs can be merged into main to trigger release
+    workflow_dispatch:
+    push:
+      branches:
+        - main
+        - "release"
+    pull_request:  # 🔥 Ensures the workflow runs when a PR is created
+      branches:
+        - main
+        - "release"
 
 permissions:
   contents: write  # Needed for committing version updates
