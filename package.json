@@ -1,37 +1,39 @@
 {
-  "private": true,
   "name": "vay.js",
   "version": "3.0.0",
-  "license": "MIT",
-  "repository": "https://github.com/IamSebastianDev/vay.js.git",
   "author": "Sebastian <sebastian@iamsebastian.dev>",
+  "repository": "https://github.com/IamSebastianDev/vay.js.git",
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.2.2",
+    "alex": "^11.0.1",
+    "lefthook": "^1.11.2",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "turbo": "^2.0.6",
+    "typescript": "^5.4.2"
+  },
+  "license": "MIT",
+  "lint-staged": {
+    "*.{ts,css,md}": "prettier --write"
+  },
+  "packageManager": "bun@1.2.0",
+  "private": true,
+  "scripts": {
+    "preci": "rm -rf node_modules",
+    "ci": "bun install --frozen-lockfile",
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "docs:dev": "bun --filter @repo/docs docs:dev",
+    "docs:build": "bun --filter @repo/docs docs:build",
+    "test": "turbo test",
+    "test:coverage": "turbo test:coverage",
+    "serve": "bun --filter @vayjs/vay serve --open",
+    "format": "prettier --write .",
+		"lint": "alex ."
+  },
   "workspaces": [
     "packages/**/*",
     "docs"
-  ],
-  "scripts": {
-    "preci": "rm -rf node_modules",
-    "ci": "yarn install --frozen-lockfile",
-    "setup": "npx husky init",
-    "build": "turbo build",
-    "dev": "turbo dev",
-    "docs:dev": "yarn workspace @repo/docs docs:dev",
-    "docs:build": "yarn workspace @repo/docs docs:build",
-    "test": "turbo test",
-    "test:coverage": "turbo test:coverage",
-    "serve": "yarn workspace @vayjs/vay serve --open"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^19.2.1",
-    "@commitlint/config-conventional": "^19.0.3",
-    "alex": "^11.0.1",
-    "husky": "^9.0.11",
-    "lint-staged": "^15.2.2",
-    "prettier": "^3.2.5",
-    "turbo": "^1.12.5",
-    "typescript": "^5.4.2"
-  },
-  "lint-staged": {
-    "*.{ts,css,md}": "prettier --write"
-  }
+  ]
 }

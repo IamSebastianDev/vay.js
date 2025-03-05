@@ -7,15 +7,8 @@ import { VayProvider } from '../src/types/vay-provider';
 const config = defineConfig({ defaultLocale: 'en' });
 const en = defineDictionary('en', {
     title: 'Title',
-    nested: {
-        key: 'Nested Key',
-    },
-    numerical: {
-        0: 'Matched 0',
-        1: 'Matched 1',
-        5: 'Matched 5',
-        10: 'Matched 10',
-    },
+    nested: { key: 'Nested Key' },
+    numerical: { 0: 'Matched 0', 1: 'Matched 1', 5: 'Matched 5', 10: 'Matched 10' },
     context: (ctx: boolean) => (ctx ? 'Test True' : 'Test False'),
 });
 
@@ -53,6 +46,7 @@ test(`Ensure that 'provider.translate' correctly translates a token to a numeric
     const { i18n } = test.context;
     const t = i18n.translate;
 
+    test.is(t('numerical.[...]', { count: -1 }), 'Matched 0');
     test.is(t('numerical.[...]', { count: 0 }), 'Matched 0');
     test.is(t('numerical.[...]', { count: 1 }), 'Matched 1');
     test.is(t('numerical.[...]', { count: 5 }), 'Matched 5');

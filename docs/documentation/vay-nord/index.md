@@ -16,9 +16,9 @@ Find out more about the package on [npm](https://npmjs.com/package/@vayjs/vay-no
 
 ## Features
 
--   **Reactive Grains for i18n**: Leverage Nørd's grains to manage translations and language states reactively within your components.
--   **Reactive Language Switching**: Fluidly change your application's language setting using Nørd's reactivity, with automatic updates across the UI for any language switch.
--   **TypeScript Support**: Utilize TypeScript to ensure type safety for your translation keys, enhancing the development experience with reliable autocompletion in IDEs.
+- **Reactive Grains for i18n**: Leverage Nørd's grains to manage translations and language states reactively within your components.
+- **Reactive Language Switching**: Fluidly change your application's language setting using Nørd's reactivity, with automatic updates across the UI for any language switch.
+- **TypeScript Support**: Utilize TypeScript to ensure type safety for your translation keys, enhancing the development experience with reliable autocompletion in IDEs.
 
 ## Installation
 

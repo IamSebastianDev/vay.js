@@ -10,9 +10,9 @@ A [@grainular/nord](https://nordjs.dev) specific extension of Vay.js, offering a
 
 ## Features
 
--   **Nørd Integration**: Tailored specifically for Nørd JS, this extension enables straightforward integration of i18n support with minimal boilerplate.
--   **Reactive Language Management**: Utilize Nørd JS's grains to reactively manage languages and translations, ensuring your UI automatically updates with language changes.
--   **Type Safety and Developer Experience**: Benefit from TypeScript's type safety and enhanced developer experience with IntelliSense and autocomplete suggestions for translation tokens.
+- **Nørd Integration**: Tailored specifically for Nørd JS, this extension enables straightforward integration of i18n support with minimal boilerplate.
+- **Reactive Language Management**: Utilize Nørd JS's grains to reactively manage languages and translations, ensuring your UI automatically updates with language changes.
+- **Type Safety and Developer Experience**: Benefit from TypeScript's type safety and enhanced developer experience with IntelliSense and autocomplete suggestions for translation tokens.
 
 ## Installing
 

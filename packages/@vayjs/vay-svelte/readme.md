@@ -8,11 +8,13 @@
 
 A Svelte-specific extension of Vay.js, offering a lightweight (additional 1kb minified), strongly typed, and modern approach to weaving Vay.js's internationalization (i18n) capabilities seamlessly into your Svelte projects. It introduces convenient Svelte stores and actions for managing language contexts, enabling interpolation, pluralization, and context management directly within Svelte components.
 
+> Please note: The `@vayjs/vay-svelte` package is deprecated for all Svelte versions beginning from version 5. Stores are deprecated and replaced with runes. Implementing i18n using **Vay** in Svelte 5 is straightforward. A guide can be found here [(Using Vay with Svelte 5)](https://vayjs.dev/documentation/vay-svelte/#svelte-5)
+
 ## Features
 
--   **Seamless Svelte Integration**: Designed specifically for Svelte, this extension enables you to add i18n support with minimal setup.
--   **Reactive Language Management**: Leverage Svelte's reactivity to manage languages and translations dynamically within your components.
--   **Type Safety and Autocompletion**: Enjoy the benefits of TypeScript for safer development and efficient coding with autocomplete suggestions.
+- **Seamless Svelte Integration**: Designed specifically for Svelte, this extension enables you to add i18n support with minimal setup.
+- **Reactive Language Management**: Leverage Svelte's reactivity to manage languages and translations dynamically within your components.
+- **Type Safety and Autocompletion**: Enjoy the benefits of TypeScript for safer development and efficient coding with autocomplete suggestions.
 
 ## Installing
 

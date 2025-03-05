@@ -81,8 +81,8 @@ Make sure to adjust the `import` statements based on how you include or bundle y
 
 ## Configuration Tips
 
--   **Target Attribute**: Ensure your HTML elements are marked with the correct attribute that matches the targetAttribute in your VayProvider's configuration for them to be recognized and translated.
--   **Removing Attributes**: If you prefer a cleaner HTML output, enable the removeAttributesOnRender option in your VayProvider configuration to have translation-related attributes removed after processing.
+- **Target Attribute**: Ensure your HTML elements are marked with the correct attribute that matches the targetAttribute in your VayProvider's configuration for them to be recognized and translated.
+- **Removing Attributes**: If you prefer a cleaner HTML output, enable the removeAttributesOnRender option in your VayProvider configuration to have translation-related attributes removed after processing.
 
 ::: tip
 `createStaticProvider()` is an excellent tool for sites that are primarily static but require dynamic translation capabilities for enhanced accessibility and user experience. Remember, it requires a browser environment to function correctly.

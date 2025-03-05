@@ -36,17 +36,17 @@ You are free to structure your code as you like and as your project requires. Th
 
 There are 5 main building blocks used in this structure.
 
--   **Localization files**: (`<domain>.localization.<lang>.ts`) Used for breaking down large dictionaries into domain specific sizeable chunks, that can be easily maintained.
--   **Dictionary files**: (`<domain>.dictionary.<lang>.ts`) Used to collect all localization files, and integrate them into the Vay dictionary system.
--   **The Provider**: (`services/i18n/i18n.provider.ts`) The configured Provider that will be used inside the service.
--   **The Service**: (`services/i18n/i18n.service.ts`) A Angular service that handles locale selection as well as translating.
--   **The Pipe**: (`pipes/translation.pipe.ts`) A Angular pipe used to translate tokens to phrases.
+- **Localization files**: (`<domain>.localization.<lang>.ts`) Used for breaking down large dictionaries into domain specific sizeable chunks, that can be easily maintained.
+- **Dictionary files**: (`<domain>.dictionary.<lang>.ts`) Used to collect all localization files, and integrate them into the Vay dictionary system.
+- **The Provider**: (`services/i18n/i18n.provider.ts`) The configured Provider that will be used inside the service.
+- **The Service**: (`services/i18n/i18n.service.ts`) A Angular service that handles locale selection as well as translating.
+- **The Pipe**: (`pipes/translation.pipe.ts`) A Angular pipe used to translate tokens to phrases.
 
 ## Providers, Dictionaries and localizations
 
 You can set up Vay as describes in the [getting started](../docs/02.getting-started.md) section.
 
--   Create a file for the `Dictionary` and `localizations` you want to use:
+- Create a file for the `Dictionary` and `localizations` you want to use:
 
 ::: code-group
 
@@ -67,7 +67,7 @@ export default {
 
 :::
 
--   Create the `Provider`:
+- Create the `Provider`:
 
 ::: code-group
 
@@ -286,7 +286,7 @@ export class LanguageComponent {
 
 ## Best practices
 
--   **Keep your localization files with your pages / components**: This allows you to find and update phrases easier in case of requirement changes.
--   **Keep your localization files small**: The larger the file, the harder it gets to maintain. In larger applications, maintainability is key to sustained growth.
--   **Namespace your Localization files per module**: Giving your tokens a semantic structure makes it easier to infer tokens.
--   **Interpolation Mechanism**: Vay's usual interpolation, pluralization and contextualization mechanisms work the same way in angular as they do in vanilla JavaScript. Use them to your advantage.
+- **Keep your localization files with your pages / components**: This allows you to find and update phrases easier in case of requirement changes.
+- **Keep your localization files small**: The larger the file, the harder it gets to maintain. In larger applications, maintainability is key to sustained growth.
+- **Namespace your Localization files per module**: Giving your tokens a semantic structure makes it easier to infer tokens.
+- **Interpolation Mechanism**: Vay's usual interpolation, pluralization and contextualization mechanisms work the same way in angular as they do in vanilla JavaScript. Use them to your advantage.
