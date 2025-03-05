@@ -1,34 +1,22 @@
 /** @format */
 
-import dts from 'rollup-plugin-dts';
-import esbuild from 'rollup-plugin-esbuild';
-import cleanup from 'rollup-plugin-cleanup';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
-import { terser } from 'rollup-plugin-terser';
-import pkg from '../package.json' assert { type: 'json' };
+import cleanup from 'rollup-plugin-cleanup';
+import dts from 'rollup-plugin-dts';
+import esbuild from 'rollup-plugin-esbuild';
 import external from 'rollup-plugin-peer-deps-external';
+import { terser } from 'rollup-plugin-terser';
+import pkg from '../package.json' with { type: 'json' };
 
-const bundle = (config) => ({
-    input: './src/index.ts',
-    external: (id) => !/^[./]/.test(id),
-    ...config,
-});
+const bundle = (config) => ({ input: './src/index.ts', external: (id) => !/^[./]/.test(id), ...config });
 
 export default [
     bundle({
         plugins: [external(), commonjs(), resolve(), esbuild(), cleanup({ extensions: ['ts'] })],
         output: [
-            {
-                file: pkg.main,
-                format: 'cjs',
-                sourcemap: true,
-            },
-            {
-                file: pkg.module,
-                format: 'es',
-                sourcemap: true,
-            },
+            { file: pkg.main, format: 'cjs', sourcemap: true },
+            { file: pkg.module, format: 'es', sourcemap: true },
             /**
              * The IIFE bundle is used for delivery via unpgk CDN and as the browser package file. It will work in any
              * browser, even if it doesn't support ESM Modules, imports or exports.
@@ -39,17 +27,12 @@ export default [
                 sourcemap: true,
                 plugins: [terser()],
                 name: 'VayReact',
-                globals: {
-                    react: 'React',
-                },
+                globals: { react: 'React' },
             },
         ],
     }),
     bundle({
-        output: {
-            file: pkg.types,
-            format: 'es',
-        },
+        output: { file: pkg.types, format: 'es' },
         plugins: [external(), resolve(), commonjs(), cleanup({ extensions: ['.ts'] }), dts()],
     }),
 ];

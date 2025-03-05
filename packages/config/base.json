@@ -13,7 +13,8 @@
         "strictPropertyInitialization": true,            
         "noUnusedLocals": true,                           
         "skipLibCheck": true,
-        "downlevelIteration": true
+        "downlevelIteration": true,
+        
     },
     "exclude": ["node_modules"]
   }

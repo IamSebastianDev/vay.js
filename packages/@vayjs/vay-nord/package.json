@@ -37,7 +37,7 @@
     "@vayjs/vay": "^2.0.0"
   },
   "scripts": {
-    "test:coverage": "c8 yarn run test",
+    "test:coverage": "c8 bun run test",
     "build": " rollup -c .config/rollup.config.js",
     "dev": "rollup -c .config/rollup.config.js --watch"
   },
