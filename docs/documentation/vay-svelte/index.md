@@ -11,6 +11,10 @@ prev: false
 [**@vayjs/vay-svelte**](https://npmjs.com/package/@vayjs/vay-svelte) stands as the specialized conduit between **Vay** and the [Svelte](https://svelte.dev) framework, bringing together the sophisticated internationalization features of Vay.js with Svelte's reactive component model. This guide is designed to be your all-encompassing reference for embedding efficient, type-safe internationalization solutions into your Svelte projects, thereby broadening your application's global appeal with ease.
 
 ::: info
+The `@vayjs/vay-svelte` package is deprecated for all versions beginning from Svelte 5. Read about how to integrate Vay with Svelte 5 [here](#svelte-5)
+:::
+
+::: info
 For more details about the package, visit it on [npm](https://npmjs.com/package/@vayjs/vay-svelte).
 :::
 
@@ -93,3 +97,36 @@ Incorporate the reactive `language` store and `translate` function within your S
 ::: tip
 Similar to its usage in Vay, the `translate` function within `@vayjs/vay-svelte` supports interpolation, pluralization, and contextual translations. Discover more about how to [interpolate](../docs/06.interpolation.md), [pluralize](../docs/07.pluralization.md) and [contextualize](../docs/08.context.md) in the **Vay** [documentation](../docs/05.translating.md).
 :::
+
+## Svelte 5
+
+One of the core mechanics of the `@vayjs/vay-svelte` package was a custom store. As of Svelte 5, stores are deprecated. However, Runes allow for an even easier integration of **Vay** into your Svelte application.
+
+```ts
+import type { ISO639Code } from '@vayjs/vay';
+import { provider } from './i18n.provider';
+
+// We track the language in a separate state rune,
+// so that our translate function can derive from
+// that rune.
+let _language$ = $state(provider.getLanguage());
+
+// Functions to set and get the language are exposed
+// and act as getter and setter, enabling us to
+// update and set the language as well as read the
+// language accordingly
+export const getLanguage = () => _language$;
+export const setLanguage = (code: ISO639Code) => {
+    provider.setLanguage(code);
+    _language$ = code;
+};
+
+// We derive the translate function by providing a
+// integration with the previously created language
+// rune, that will rerun the function when the locale
+// changes (or any of the provided data.) This allows
+// for reactive changes inside the translation function
+export const translate = (...[token, data, locale = undefined]: Parameters<typeof provider.translate>) => {
+    return provider.translate(token, data, locale ?? _language$);
+};
+```
