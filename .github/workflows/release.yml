@@ -37,7 +37,7 @@ jobs:
       - name: Determine Next Version (From @vayjs/vay)
         id: versioning
         run: |
-          MASTER_PACKAGE="packages/@vay/vay"
+          MASTER_PACKAGE="packages/@vayjs/vay"
           CURRENT_VERSION=$(jq -r .version $MASTER_PACKAGE/package.json)
 
           if git log -1 --pretty=%B | grep -iqE "^(feat|feature):"; then
@@ -55,11 +55,11 @@ jobs:
 
       - name: Update All Package Versions
         run: |
-          MASTER_PACKAGE="packages/@vay/vay"
+          MASTER_PACKAGE="packages/@vayjs/vay"
 
           jq --arg version "$NEW_VERSION" '.version = $version' "$MASTER_PACKAGE/package.json" > temp.json && mv temp.json "$MASTER_PACKAGE/package.json"
 
-          for package in packages/@vay/*; do
+          for package in packages/@vayjs/*; do
             if [ -f "$package/package.json" ]; then
               jq --arg version "$NEW_VERSION" '.version = $version' "$package/package.json" > temp.json && mv temp.json "$package/package.json"
             fi
@@ -71,7 +71,7 @@ jobs:
           git checkout -b $BRANCH_NAME
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add packages/@vay/**/package.json
+          git add packages/@vayjs/**/package.json
           git commit -m "chore: bump version to $NEW_VERSION"
           git push origin $BRANCH_NAME
 
