@@ -17,7 +17,7 @@
   "devDependencies": {
     "@grainular/nord": "^1.11.0",
     "@repo/typescript-config": "0.0.0",
-    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-commonjs": "^28.0.3",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@vayjs/vay": "^2.0.0",
     "ava": "^6.2.0",
